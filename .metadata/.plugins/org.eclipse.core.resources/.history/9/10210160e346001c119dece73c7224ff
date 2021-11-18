@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>홈화면</title>
+</head>
+<body>
+	<h1>health</h1>
+	<a href="/">홈으로</a>
+	<br>
+	<table class="table">
+			<tr th:each="vo : {list}">
+			
+			</tr>
+	</table>
+	
+
+</body>
+</html>

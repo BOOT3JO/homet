@@ -1,0 +1,5 @@
+package com.homet.entity;
+
+public @interface Entity {
+
+}

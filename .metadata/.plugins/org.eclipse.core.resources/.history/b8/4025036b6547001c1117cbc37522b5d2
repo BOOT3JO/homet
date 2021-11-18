@@ -1,0 +1,9 @@
+package com.homet.ropository;
+
+import org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration;
+
+import com.homet.service.HealthService;
+
+public interface HealthRepository extends HealthService {
+	
+}

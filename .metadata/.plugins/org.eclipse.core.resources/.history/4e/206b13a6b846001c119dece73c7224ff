@@ -1,0 +1,17 @@
+package com.homet.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.homet.controller.HealthMapper;
+
+public class HealthServiceImpl implements HealthService{
+	
+	@Autowired
+	HealthMapper hdao;
+	
+	@Override
+	public List<Health> healthList(int hea) {
+		return cdao.healthList(hea);
+	}
+	
+}

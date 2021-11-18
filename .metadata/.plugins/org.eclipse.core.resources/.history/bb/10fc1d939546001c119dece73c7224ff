@@ -1,0 +1,13 @@
+package com.homet.controller;
+
+import org.apache.ibatis.annotations.Insert;
+import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import com.homet.model.Health;
+
+@Mapper
+public interface HealthMapper {
+	@Insert("INSERT INTO health(name,address) VALUES(#{health.name},#{health.address}")
+	int insert(@Param("health") Health health);
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>홈화면</title>
+</head>
+<body>
+	<h1>health</h1>
+	<a href="/">홈으로</a>
+	<br>
+	<table class="table">
+			<tr th:each="vo: {list}">
+				<th width="40%">순번</th>
+				<td th:text="${list.hidx}">[[${vo?.hidx }]]</td>
+				<th width="30%">헬스장 이름</th>
+				<td>[[${vo.name }]]</td>
+				<th width="30%">주소</th>
+				<td>[[${vo.address }]]</td>
+				<td th:text="${vo.name }"></td>
+					<td th:text="${vo.readCount }"></td>
+					<td th:text="${#calendars.format(vo.wdate,'yyyy-MM-dd')}">]
+			</tr>
+	</table>
+	
+
+</body>
+</html>

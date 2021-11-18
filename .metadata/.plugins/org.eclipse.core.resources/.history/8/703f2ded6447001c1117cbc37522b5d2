@@ -1,0 +1,17 @@
+package com.homet.entity;
+
+import lombok.Data;
+@Entity
+@Data
+public class Health {
+	   
+
+	    private String title;
+
+	    private String content;
+
+	    private String filename;
+
+	    private String filepath;
+	
+}

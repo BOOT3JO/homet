@@ -1,0 +1,10 @@
+package com.homet.service;
+
+public class HealthServiceImpl implements HealthService{
+	
+	@Override
+	public List<Comment> commentList(int mref) {
+		return cdao.commentList(mref);
+	}
+	
+}

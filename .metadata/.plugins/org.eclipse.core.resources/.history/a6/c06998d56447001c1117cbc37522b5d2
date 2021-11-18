@@ -1,0 +1,7 @@
+package com.homet.ropository;
+
+import com.homet.service.HealthService;
+
+public interface HealthRepository extends HealthService {
+
+}

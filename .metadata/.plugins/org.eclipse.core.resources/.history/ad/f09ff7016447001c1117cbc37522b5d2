@@ -1,0 +1,7 @@
+package com.homet.ropository;
+
+import com.homet.model.Health;
+
+public interface HealthRepository extends JpaRepository<Health, Long> {
+
+}

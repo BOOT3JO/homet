@@ -1,0 +1,11 @@
+package com.homet.model;
+
+
+public class Health {
+	private int hidx;
+	private String name;
+	private String address;
+	
+	
+	
+}

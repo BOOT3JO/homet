@@ -1,0 +1,59 @@
+package com.homet.controller;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.homet.model.Health;
+
+@org.springframework.web.bind.annotation.RestController
+public class RestController {
+	private Map<String, Health> RestMap;
+	
+
+	@PostConstruct public void init() { RestMap = new HashMap<String, Health>();
+	RestMap.put("1", new Health("1","팔라티움 헬스클럽", "서울특별시 서초구 사평대로 160 (반포동, 4층)"));
+	RestMap.put("2", new Health("2","금성헬스", "서울특별시 서초구 서초동 1577-49"));
+	RestMap.put("3", new Health("3","서초헬스클럽","서울특별시 서초구 사평대로 349  (반포동,2층)")); }
+	
+
+	@GetMapping("/rest/{hidx}")
+	public Health getHealth(@PathVariable("hidx")String hidx) {
+		return RestMap.get(hidx);
+	}
+	
+	@GetMapping("/rest/all")
+	public List<Health> getUserProfileList(){
+		return new ArrayList<Health>(RestMap.values());
+	}
+	
+	//get 조회 // post 입력 //put 수정 // delete 삭제
+	
+	@PutMapping("/rest/{hidx}")
+	public void putHealth(@PathVariable("hidx")String hidx,@RequestParam("name")String name, @RequestParam("address")String address) {
+		Health heal = new Health(hidx,name,address);
+		RestMap.put(hidx, heal);
+		
+	}
+	@PostMapping("/rest/{hidx}")
+	public void postUserProfile(@PathVariable("hidx")String hidx,@RequestParam("name")String name, @RequestParam("address")String address) {
+		Health health = RestMap.get(hidx);
+		health.setName(name);
+		health.setAddress(address);
+	}
+	
+	@DeleteMapping("/rest/{hidx}")
+	public void deleteUserProfile(@PathVariable("hidx")String hidx) {
+		RestMap.remove(hidx);
+		}
+}
