@@ -1,0 +1,60 @@
+package com.homet.controller;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+import com.homet.model.Mealkit;
+import com.homet.service.MealkitService;
+
+@Controller
+@RequestMapping("/mealkit")
+public class MealkitController {
+	
+	@Autowired
+	MealkitService service;
+	
+	@RequestMapping(value = {"/","/mealkitHome"}, method = RequestMethod.GET)
+	public String mealkithome() {
+		
+		return "kit/mealkitHome";
+	}
+	
+	@RequestMapping(value = "/mealkit", method = RequestMethod.GET)
+	public String makeKit(Model model) {
+		
+		List<Mealkit> list = new ArrayList<Mealkit>();
+		list = service.getByCategory("meat");
+		System.out.println(list);
+		model.addAttribute("list",list);
+		return "kit/mealkit";
+	}
+
+	@RequestMapping(value = "/mealkitset", method = RequestMethod.GET)
+	public String mealkitset() {
+		
+		return "kit/mealkitset";
+	}
+	
+	//1번 추천 세트로 이동
+	@RequestMapping(value = "/chooseSet", params = "category=1")
+	public String setList1() {
+		
+		
+		
+		
+		return "kit/set1.html";
+	}
+	
+	
+	
+	
+	
+	
+	
+}

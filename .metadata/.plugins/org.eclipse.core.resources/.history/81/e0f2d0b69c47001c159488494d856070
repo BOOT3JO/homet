@@ -1,0 +1,16 @@
+package com.homet.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
+
+import com.homet.model.Mealkit;
+import com.homet.model.Orders;
+
+@Mapper
+public interface MealkitMapper {
+	 List<Mealkit> getByCategory(String category) throws Exception;
+	 Mealkit getByIdx(int idx);
+	 void insertOrder(Orders order);
+	 List<Orders> getOrdersByNickname(String nickname);
+}

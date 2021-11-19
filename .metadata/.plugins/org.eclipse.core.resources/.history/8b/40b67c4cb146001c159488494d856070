@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>키트 홈</title>
+</head>
+<body>
+	<a href="/mealkit">밀키트 만들기</a>
+	<a href="/mealkitset">추천 세트</a>
+</body>
+</html>

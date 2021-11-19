@@ -1,0 +1,36 @@
+package com.homet.service;
+
+import java.util.List;
+
+import com.homet.dao.MealkitMapper;
+import com.homet.model.Mealkit;
+import com.homet.model.Orders;
+
+public class MealkitServiceImpl implements MealkitService {
+
+	MealkitMapper dao;
+	
+	@Override
+	public List<Mealkit> getByCategory(String category) {
+		return null;
+	}
+
+	@Override
+	public Mealkit getByIdx(int idx) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void insertOrder(Orders order) {
+		// TODO Auto-generated method stub
+
+	}
+
+	@Override
+	public List<Orders> getOrdersByNickname(String nickname) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

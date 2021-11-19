@@ -1,0 +1,11 @@
+package com.homet.model;
+
+import java.sql.Date;
+
+public class Orders {
+	private int odix;
+	private String nickname;
+	private String order_list;
+	private Date order_date;
+	private Date del_date;
+}

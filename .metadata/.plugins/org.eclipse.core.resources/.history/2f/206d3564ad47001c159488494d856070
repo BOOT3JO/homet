@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>벌크업 set</title>
+</head>
+<body>
+	<h1>벌크업 set</h1>
+	<ul th:each="set,index : ${setList}">
+		<li>
+			<ul>
+				<li th:text="${set.name}">세트명</li>
+				<li th:text="${set.price}">가격</li>
+			</ul>
+		</li>	
+	</ul>
+</body>
+</html>

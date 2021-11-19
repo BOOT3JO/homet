@@ -1,0 +1,13 @@
+package com.homet.dao;
+
+import java.util.List;
+
+import com.homet.model.Mealkit;
+import com.homet.model.Orders;
+
+public interface MealkitMapper {
+	 List<Mealkit> getByCategory(String category);
+	 Mealkit getByIdx(int idx);
+	 void insertOrder(Orders order);
+	 
+}

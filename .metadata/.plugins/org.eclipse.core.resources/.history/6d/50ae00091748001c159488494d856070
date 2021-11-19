@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>밀키트 만들기</title>
+</head>
+<body>
+	<h1>밀키트 만들기</h1>
+	<h3>MEAT</h3>
+	<div th:each="vo : ${list}">
+		<div >
+			<div th:text="${vo.name}">상품명<div>
+			<div th:text="${vo.price}">가격</div>
+		</div>
+	</div>
+	
+	
+	<script type="text/javascript">
+	const $main = document.getElementById('main');
+	
+	const add_kit = function(){
+	      /* 자식 노드 추가 */
+	      const $new = `<li>smartTV</li><li>오디오</li><li>Ipad</li><li>갤럭시</li>`;
+	      
+	      const $ul = document.createElement('ul');       // 새로운 요소 생성. - ul 태그
+	      $ul.innerHTML = $new;
+	      $main.appendChild($ul);
+	      //생성된 요소의 css 스타일을 적용하는 방법.
+	      $ul.className='item';
+	      $ul.classList.add('item01');
+	    }
+	</script>
+</body>
+</html>

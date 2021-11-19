@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>밀키트 세트</title>
+</head>
+<body>
+	<h1>밀키트 세트</h1>
+	<ul th:each="set,index : ${setList}">
+		<li>
+			<ul>
+				<li><a href="/mealkit/chooseSet" 
+				th:href="@{/mealkit/chooseSet(category=${index.index})}" th:text="${set.name}">세트명</a></li>
+				<li th:text="${set.content}">내용</li>
+			</ul>
+		</li>	
+	</ul>
+	
+</body>
+</html>

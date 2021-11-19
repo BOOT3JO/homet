@@ -1,0 +1,25 @@
+package com.homet.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@RequestMapping("/mealkit")
+public class MealkitController {
+	
+	@RequestMapping(value = "/")
+	public String mealkithome() {
+		
+		return "mealkit/bestkit";
+	}
+	
+	@RequestMapping(value = "/mealkit")
+	public String makeKit() {
+		
+		return "mealkit/mealkit";
+	}
+
+	@RequestMapping(value = "//mealkitset")
+	public String setList() {
+		
+		return "mealkit/mealkitset";
+	}
+}

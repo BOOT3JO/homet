@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>밀키트 만들기</title>
+</head>
+<body>
+	<h1>밀키트 만들기</h1>
+	
+	<div th:each="vo : ${list}">
+		<ul>
+			<li th:text="${vo.name}"></li>
+			<li th:text="${vo.price}"></li>
+		</ul>
+	</div>
+</body>
+</html>
