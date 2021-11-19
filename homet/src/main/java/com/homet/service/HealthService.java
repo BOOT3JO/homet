@@ -10,10 +10,10 @@ public interface HealthService {
 	public List<Health> healthList();
 	
 	
-	public List<Health> healthOne();
+	public Health healthOne();
 
 
-	public List<Health> healthSearch();
+	public List<Health> healthSearch(String location);
 	
 	
 }

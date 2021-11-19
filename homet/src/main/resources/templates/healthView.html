@@ -5,15 +5,14 @@
 <title>헬스 상세 페이지</title>
 </head>
 <body>
-			<form th:action="/health/search" method="POST">
+			<form action="/health/search" method="POST">
 	<table>
 		<thead>
 		<tr>
 			<th>상호명</th>
 			<th>주소명</th>
-			<td><input th:placeholder="검색어를 입력하셈" th:name="location" th:value = "${location}" /></td>
-			<td><input type="text" name="name"  /></td>
-			<td><input type="submit" th:value="검색" /></td>
+			<td><input placeholder="검색어를 입력하셈" name="location" /></td>
+			<td><input type="submit" value="검색" /></td>
 		</tr>	
 		</thead>
 		<tbody>
@@ -24,6 +23,6 @@
 			</tr>
 		</tbody> 
 	</table>
-			</form>
+			 </form>
 </body>
 </html>

@@ -2,14 +2,7 @@ package com.homet.dao;
 
 import java.util.List;
 
-import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Options;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Result;
-import org.apache.ibatis.annotations.ResultMap;
-import org.apache.ibatis.annotations.Results;
-import org.apache.ibatis.annotations.Select;
 
 import com.homet.model.Health;
 
@@ -18,9 +11,9 @@ public interface HealthMapper {
 	
     public List<Health> getList();
     
-    public List<Health> getOne();
+    public Health getOne();
     
-    public List<Health> getSearch();
+    public List<Health> getSearch(String location);
 }
 
 //@Insert("INSERT INTO health(name,address) VALUES(#{name},#{address})")

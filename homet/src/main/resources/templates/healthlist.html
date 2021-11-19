@@ -22,9 +22,9 @@
 		</tr>	
 		</thead>
 		<tbody>
-			<tr th:each ="health : ${list}">
+			<tr th:each ="health : ${list}" >
 				<td th:text="${health.name}"></td>
-				<td th:text="${health.address}"><a href="#"></a></td>
+				<td th:text="${health.address}"></td>
 			</tr>
 		</tbody>
 	</table>

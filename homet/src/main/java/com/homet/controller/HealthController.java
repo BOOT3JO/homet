@@ -58,14 +58,22 @@ public class HealthController {
 	
 	// 11 - 18 서치 추가 작업
 	@RequestMapping(value="/search", method = RequestMethod.GET)
-	public String search(Health health, Model model) {
+	public String search(Model model) {
 		
-		model.addAttribute("Health",service.healthSearch());
+//		model.addAttribute("search",service.healthSearch());
 		
 		return "healthView";
 		
 	}
 	
+	@RequestMapping(value="/search", method = RequestMethod.POST)
+	public String search(String health, Model model) {
+		
+		model.addAttribute("search",service.healthSearch(health));
+		
+		return "healthView";
+		
+	}
 	/*
 	@GetMapping("healthView/{hidx}")
 	public String getById(@PathVariable("hidx")int hidx){

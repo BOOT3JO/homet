@@ -12,7 +12,7 @@
 		select name,address from health where hidx=#{hidx};
 	</select>
 	
-	<select id="getSearch" resultType="Health">
+	<select id="getSearch" resultType="Health" parameterType="String">
 		select name from health where address like concat ('%',#{location},'%');
 	</select>
 	

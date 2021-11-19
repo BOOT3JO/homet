@@ -23,14 +23,14 @@ public class HealthServiceImpl implements HealthService{
 	}
 	
 	@Override
-	public List<Health> healthOne() {
+	public Health healthOne() {
 		return hdao.getOne();
 	}
 	
 	// 11-18 작업
 	@Override
-	public List<Health> healthSearch(){
-		return hdao.getSearch();
+	public List<Health> healthSearch(String location){
+		return hdao.getSearch(location);
 	}
 	
 	
