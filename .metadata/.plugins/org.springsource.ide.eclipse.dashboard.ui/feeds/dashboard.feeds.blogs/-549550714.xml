@@ -5,7 +5,43 @@
   <link rel="self" href="https://spring.io/blog.atom" />
   <id>http://spring.io/blog.atom</id>
   <icon>https://spring.io/favicon.ico</icon>
-  <updated>2021-11-19T08:00:00Z</updated>
+  <updated>2021-11-19T08:39:41Z</updated>
+  <entry>
+    <title>Spring Boot 2.6 is now available</title>
+    <link rel="alternate" href="https://spring.io/blog/2021/11/19/spring-boot-2-6-is-now-available" />
+    <category term="releases" label="Releases" />
+    <author>
+      <name>Madhura Bhave</name>
+    </author>
+    <id>tag:spring.io,2021-11-19:4617</id>
+    <updated>2021-11-19T08:39:41Z</updated>
+    <content type="html">&lt;p&gt;On behalf of the Spring Boot team and everyone that has contributed, I am pleased to announce that Spring Boot 2.6.0 has been released and is available from Maven Central. &lt;/p&gt;
+&lt;p&gt;This release adds a significant number of new features and improvements. For full &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.6-Release-Notes#upgrading-from-spring-boot-25"&gt;upgrade instructions&lt;/a&gt; and &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.6-Release-Notes#new-and-noteworthy"&gt;new and noteworthy&lt;/a&gt; features please see the &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.6-Release-Notes"&gt;release notes&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#what-rsquo-s-new-in-2-6" class="anchor" name="what-rsquo-s-new-in-2-6"&gt;&lt;/a&gt;What&amp;rsquo;s new in 2.6&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Support for &lt;code&gt;SameSite&lt;/code&gt; attributes on session cookies for servlet applications&lt;/li&gt;
+  &lt;li&gt;Support for configuring health groups on the main or management port&lt;/li&gt;
+  &lt;li&gt;Enhanced &lt;code&gt;/info&lt;/code&gt; endpoint with Java Runtime information&lt;/li&gt;
+  &lt;li&gt;Support for testing Spring MVC using &lt;code&gt;WebTestClient&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Auto-configuration for &lt;code&gt;spring-rabbit-stream&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Support for pluggable rules for sanitizing properties in &lt;code&gt;/env&lt;/code&gt; and &lt;code&gt;configprops&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;h3&gt;&lt;a href="#dependency-upgrades" class="anchor" name="dependency-upgrades"&gt;&lt;/a&gt;Dependency upgrades&lt;/h3&gt;
+&lt;p&gt;Spring Boot 2.6 moves to new versions of several Spring projects:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-data-commons/wiki/Release-Train-2021.1-%28Q%29-Release-Notes"&gt;Spring Data 2021.1&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-hateoas/releases/tag/1.4.0"&gt;Spring HATEOAS 1.4&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://docs.spring.io/spring-amqp/docs/2.4.x/reference/html/#changes-in-2-4-since-2-3"&gt;Spring AMQP 2.4&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://docs.spring.io/spring-kafka/docs/2.8.x/reference/html/#spring-kafka-intro-new"&gt;Spring Kafka 2.8&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://docs.spring.io/spring-security/reference/5.6.0/whats-new.html"&gt;Spring Security 5.6&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href="https://github.com/spring-projects/spring-session-bom/wiki/Spring-Session-2021.1-Release-Notes"&gt;Spring Session 2021.1&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;We¡¯ve also upgraded to the latest stable releases of other third-party libraries wherever possible. Please see the &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.6-Release-Notes#dependency-upgrades"&gt;release notes&lt;/a&gt; for details.&lt;/p&gt;&lt;h3&gt;&lt;a href="#other-changes" class="anchor" name="other-changes"&gt;&lt;/a&gt;Other changes&lt;/h3&gt;
+&lt;p&gt;There&amp;rsquo;s a whole host of other changes and improvements that are documented in the &lt;a href="https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.6-Release-Notes"&gt;release notes&lt;/a&gt;. You can also find a list of deprecated classes and methods that we plan to remove in the next version.&lt;/p&gt;
+&lt;p&gt;Additionally, Spring Boot 2.4.0 has now reached end of OSS support. More information on Spring Boot&amp;rsquo;s support dates can be found &lt;a href="https://spring.io/projects/spring-boot#support"&gt;here.&lt;/a&gt;&lt;/p&gt;&lt;h2&gt;&lt;a href="#thank-you" class="anchor" name="thank-you"&gt;&lt;/a&gt;Thank you&lt;/h2&gt;
+&lt;p&gt;We want to take this opportunity to again thank all our users and contributors.&lt;/p&gt;
+&lt;p&gt;If you&amp;rsquo;re interested in helping out, check out the &lt;a href="https://github.com/spring-projects/spring-boot/labels/status%3A%20ideal-for-contribution"&gt;&amp;ldquo;ideal for contribution&amp;rdquo; tag&lt;/a&gt; in the issue repository. If you have general questions, please ask at &lt;a href="http://stackoverflow.com"&gt;stackoverflow.com&lt;/a&gt; using the &lt;a href="http://stackoverflow.com/tags/spring-boot"&gt;&lt;code&gt;spring-boot&lt;/code&gt; tag&lt;/a&gt; or chat with the community &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;on Gitter&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://spring.io/projects/spring-boot/"&gt;Project Page&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot"&gt;GitHub&lt;/a&gt; | &lt;a href="https://github.com/spring-projects/spring-boot/issues"&gt;Issues&lt;/a&gt; | &lt;a href="http://docs.spring.io/spring-boot/docs/2.6.0/reference/html"&gt;Documentation&lt;/a&gt; | &lt;a href="http://stackoverflow.com/questions/tagged/spring-boot"&gt;Stack Overflow&lt;/a&gt; | &lt;a href="https://gitter.im/spring-projects/spring-boot"&gt;Gitter&lt;/a&gt;&lt;/p&gt;
+&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
+  </entry>
   <entry>
     <title>Get to Know a Kubernetes Operator!</title>
     <link rel="alternate" href="https://spring.io/blog/2021/11/19/get-to-know-a-kubernetes-operator" />
@@ -506,19 +542,6 @@
     <content type="html">&lt;p&gt;Spring Cloud Data Flow team is pleased to announce the release of 2.8.4 and 2.9.1&lt;/p&gt;
 &lt;p&gt;Releases &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/releases/tag/v2.9.1"&gt;2.9.1&lt;/a&gt; and &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/releases/tag/v2.8.4"&gt;2.8.4&lt;/a&gt; contains a quick bug fix and more changes were made in &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/releases/tag/v2.9.0"&gt;2.9.0&lt;/a&gt; and &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/releases/tag/v2.8.3"&gt;2.8.3&lt;/a&gt;. For complete list of changes for &lt;code&gt;2.9.x&lt;/code&gt; you can see its milestone and rc notes in &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/releases"&gt;releases&lt;/a&gt;.&lt;/p&gt;&lt;h2&gt;&lt;a href="#stay-in-touch-hellip" class="anchor" name="stay-in-touch-hellip"&gt;&lt;/a&gt;Stay in touch&amp;hellip;&lt;/h2&gt;
 &lt;p&gt;As always, we welcome feedback and contributions, so please reach out to us on &lt;a href="https://stackoverflow.com/questions/tagged/spring-cloud-dataflow"&gt;Stackoverflow&lt;/a&gt; or &lt;a href="https://github.com/spring-cloud/spring-cloud-dataflow/issues"&gt;GitHub&lt;/a&gt; or via &lt;a href="https://gitter.im/spring-cloud/spring-cloud-dataflow"&gt;Gitter&lt;/a&gt;.&lt;/p&gt;
-&lt;!-- rendered by Sagan Renderer Service --&gt;</content>
-  </entry>
-  <entry>
-    <title>Bootiful Podcast: Legend, Dutchess founder, Devoxx4Kids contributor, and fellow Java Champion Linda van der Pal</title>
-    <link rel="alternate" href="https://spring.io/blog/2021/11/04/bootiful-podcast-legend-dutchess-founder-devoxx4kids-contributor-and-fellow-java-champion-linda-van-der-pal" />
-    <category term="engineering" label="Engineering" />
-    <author>
-      <name>Josh Long</name>
-    </author>
-    <id>tag:spring.io,2021-11-04:4594</id>
-    <updated>2021-11-04T20:00:00Z</updated>
-    <content type="html">&lt;p&gt;Hi, Spring fans! In this episode &lt;a href="https://twitter.com/starbuxman"&gt;Josh Long (@starbuxman)&lt;/a&gt; talks to Dutchess founder, &lt;a href="https://twitter.com/Devoxx4KidsNL"&gt;Devoxx4Kids Netherlands (@Devoxx4KidsNL)&lt;/a&gt; leader, inspiring person, and fellow Java Champion &lt;a href="https://twitter.com/DuchessFounder"&gt;Linda van der Pal (@DuchessFounder)&lt;/a&gt;. &lt;/p&gt;
-&lt;iframe title="Legend, Dutchess founder, Devoxx4Kids contributor, and fellow Java Champion Linda van der Pal  " allowtransparency="true" height="150" width="100%" style="border: none; min-width: min(100%, 430px);" scrolling="no" data-name="pb-iframe-player" src="https://www.podbean.com/player-v2/?i=5ke2w-11223be-pb&amp;from=pb6admin&amp;share=1&amp;download=1&amp;rtl=0&amp;fonts=Arial&amp;skin=1&amp;font-color=&amp;btn-skin=7"&gt;&lt;/iframe&gt;
 &lt;!-- rendered by Sagan Renderer Service --&gt;</content>
   </entry>
 </feed>

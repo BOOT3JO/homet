@@ -2,12 +2,14 @@ package com.homet.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringTokenizer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.homet.model.Mealkit;
 import com.homet.model.SetMenu;
@@ -57,8 +59,27 @@ public class MealkitController {
 		setList = service.getSetByCategory("bulk");
 		model.addAttribute("setList",setList);
 		
-		return "kit/set1.html";
+		return "kit/set1";
 	}
+	
+	
+	@RequestMapping(value = "/chooseDetail")
+	   public String setDetail1(Model model,@RequestParam String idx_list) {
+		System.out.println(idx_list);
+	      List<Mealkit> meal_list = new ArrayList<Mealkit>();
+	      StringTokenizer token = new StringTokenizer(idx_list, "/");
+	      
+	      while(token.hasMoreTokens()) {
+	    	  Mealkit meal = service.getByIdx(Integer.parseInt(token.nextToken()));
+	    	  meal_list.add(meal);
+	      }
+	      
+	      model.addAttribute("meal_list",meal_list);
+	      return "kit/set1detail";
+	   }
+	
+	
+	
 	
 	@RequestMapping(value = "/chooseSet", params = "category=2")
 	public String setList2() {

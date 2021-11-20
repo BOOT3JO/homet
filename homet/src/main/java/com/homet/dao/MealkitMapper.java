@@ -11,7 +11,7 @@ import com.homet.model.SetMenu;
 @Mapper
 public interface MealkitMapper {
 	 List<Mealkit> getByCategory(String category);
-	 Mealkit getByIdx(int idx);
+	 Mealkit getByIdx(int midx);
 	 void insertOrder(Orders order);
 	 List<Orders> getOrdersByNickname(String nickname);
 	 List<SetMenu> getSetByCategory(String category);

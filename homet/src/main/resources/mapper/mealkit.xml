@@ -10,7 +10,7 @@
  	</select>
  	
  	<select id="getByIdx" resultType="Mealkit" parameterType="int">
- 		select * from mealkit where idx=#{idx}
+ 		select * from mealkit where midx=#{midx}
  	</select>
  	
  	<insert id="insertOrder" parameterType="Orders">

@@ -21,7 +21,7 @@
 	<h1>밀키트 만들기</h1>
 	<h3>MEAT</h3>
 	<th:block th:each="vo : ${list}">
-		<div onclick="add_kit('${vo.name}', '${vo.price}')" class="item">
+		<div th:onclick="add_kit([[${vo.name}]], [[${vo.price}]])" class="item">
 			<div th:text="${vo.name}">상품명</div>
 			<div th:text="${vo.price}">가격</div>
 		</div>
@@ -37,7 +37,7 @@
 	
 	const add_kit = function(name, price){
 	      /* 자식 노드 추가 */
-	      const $new = "<div>"+ name + price + "</div>";
+	      const $new = "<div>"+ name + price + '<button onclick="delete_row(this)">x</button></div>';
 	      
 	      const $div = document.createElement('div');       // 새로운 요소 생성. - ul 태그
 	      $div.innerHTML = $new;
@@ -46,6 +46,10 @@
 	      /* $div.className='item';
 	      $div.classList.add('item01'); */
 	    }
+	
+	const delete_row = function(me){
+		me.parentNode.remove();
+	}
 	</script>
 </body>
 </html>
