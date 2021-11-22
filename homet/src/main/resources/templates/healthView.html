@@ -5,6 +5,7 @@
 <title>헬스 상세 페이지</title>
 </head>
 <body>
+	
 			<form action="/health/search" method="POST">
 	<table>
 		<thead>
@@ -19,10 +20,16 @@
 			<tr th:each ="vo : ${search}">
 			<td th:text="${vo.hidx}"></td>
 				<td th:text="${vo.name}"></td>
+				<td th:text="${vo.location}"></td>
 				<td th:text="${vo.address}"><a href="#"></a></td>
 			</tr>
 		</tbody> 
 	</table>
 			 </form>
+			 <div class="nav">
+		<div class="nav-item" value="${location.name}">상호명 : ${location.name}</div>
+		<div class="nav-item">주소 : </div>
+		
+	</div>
 </body>
 </html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>운동영상(올리기)</title>
+</head>
+<body>
+	<h2><a href="/">HomeT</a></h2>
+	
+	<div th:if="${user != null}">
+		[[${sessionScope.user.name}]]님([[${sessionScope.user.email }]])
+		<a href="user/detail">나의 정보</a>
+		<a href="logout">로그아웃</a>
+	</div>
+	<div th:unless="${user != null}">
+		<a href="login">로그인</a>
+		<a href="user/join?start=1">회원가입</a>
+	</div>
+	
+	<nav class="navigation">
+		<a href="/video">운동영상</a>
+		<a href="#">자유게시판</a>
+		<a href="#">밀키트</a>
+		<a href="/health">헬스장정보</a>
+		<a href="#">마이페이지</a>
+	</nav>
+	
+	<div class="">
+	<form action="/videosave">
+		<table>
+			<tr>
+				<td>제목</td>
+				<td><input type="text" name="subject"></td>
+			</tr>
+			<tr>
+				<td>카테고리</td>
+				<td><input type="text" name="category" placeholder="홈트, 웨이트, 요가, 스트레칭"></td>
+			</tr>
+			<tr>
+				<td>URL</td>
+				<td><input type="text" name="url"></td>
+			</tr>
+			<tr>
+				<td>내용</td>
+				<td><textarea rows="10" cols="80" name="content" required="required"></textarea></td>
+			</tr>
+		</table>
+		
+		<button type="submit">저장</button>
+		<a th:href="@{/video?(page=${page})}"><button type="button">취소</button></a>
+		</form>
+	</div>
+</body>
+</html>
