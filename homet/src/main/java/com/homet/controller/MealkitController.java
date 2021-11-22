@@ -32,11 +32,10 @@ public class MealkitController {
 	//나만의 밀키트 선택 첫페이지
 	@RequestMapping(value = "/mealkit", method = RequestMethod.GET)
 	public String makeKit(Model model) {
-		
-		List<Mealkit> list = new ArrayList<Mealkit>();
-		list = service.getByCategory("meat");
-		System.out.println(list);
-		model.addAttribute("list",list);
+		model.addAttribute("meatList",service.getByCategory("meat"));
+		model.addAttribute("saladList",service.getByCategory("salad"));
+		model.addAttribute("toppingList",service.getByCategory("topping"));
+		model.addAttribute("sauceList",service.getByCategory("sauce"));
 		return "kit/mealkit";
 	}
 
