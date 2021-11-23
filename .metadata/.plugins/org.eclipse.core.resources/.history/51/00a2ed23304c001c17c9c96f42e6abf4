@@ -14,7 +14,7 @@ public interface VideosMapper {
 	Videos getOne(int vidx);
 	int categoryCount(Videos video);
 	List<Videos> getPageList(PageDto dto);
-	int listCount(Map<String,Object> map);
+	int listCount(Map<String,Object> mao);
 	int insert(Videos video);
 	int update(Videos video);
 	int updateReadCnt(int vidx);

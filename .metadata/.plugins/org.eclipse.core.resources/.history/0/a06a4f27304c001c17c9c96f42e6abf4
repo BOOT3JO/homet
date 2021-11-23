@@ -38,7 +38,7 @@ public class VideosServiceImpl implements VideosService {
 	
 	@Override
 	public int listCount(Map<String,Object> map) {
-		return dao.listCount(map);
+		return dao.listCount();
 	}
 
 	@Override
