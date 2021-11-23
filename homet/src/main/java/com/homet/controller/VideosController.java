@@ -45,7 +45,7 @@ public class VideosController {
 		String category = (String) param.get("category");
 		
 		
-		totalCount=service.listCount();
+		totalCount=service.listCount(param);
 		
 		pageDto=new PageDto(currentPage, pageSize, totalCount, category);
 		list = service.getPageList(pageDto);

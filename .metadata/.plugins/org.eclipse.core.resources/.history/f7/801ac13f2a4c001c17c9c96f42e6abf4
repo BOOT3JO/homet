@@ -71,18 +71,7 @@
 			</div>
 			</div><!--  thymeleaf Numbers 클래스를 이용하여 배열생성 #numbers.sequence -->
 			
-			<div th:if="${category!=null}" style="text-align: center;">
-			<div th:with="start=${page.startPage},last=(${page.startPage+9<page.totalPage?start+9:page.totalPage})">
-				<a th:href="@{/video?(page=1,category=${category})}" class="btn btn-default">&lt;&lt;</a>
-				<a th:href="${page.startPage==1}? @{/video?(page=1,category=${category})} : @{.(page=${page.currentPage-10},category=${category})}" th:class="${page.startPage==1}? 'disabled'" class="btn btn-default">&lt;</a>
-				
-				<a th:each="i:${#numbers.sequence(start,last)}" 
-				th:href="@{/video?(page=${i},category=${category})}" th:text="${i}" th:class="${i==page.currentPage}?'':'btn btn-default'"></a>
-	
-				<a th:href="${page.endPage==page.totalPage}? @{/video?(page=${page.totalPage},category=${category})}:@{.(page=${page.currentPage+10},category=${category})}" th:class="${page.endPage==page.totalPage}? 'disabled'" class="btn btn-default">&gt;</a>
-				<a th:href="@{/video?(page=${page.totalPage},category=${category})}" class="btn btn-default">&gt;&gt;</a>
-			</div>
-			</div><!--  thymeleaf Numbers 클래스를 이용하여 배열생성 #numbers.sequence -->
+			
 	</div> <!-- container -->
 </body>
 </html>

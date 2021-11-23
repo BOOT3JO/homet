@@ -11,7 +11,7 @@ public interface VideosService {
 	Videos getOne(int vidx);
 	int categoryCount(Videos video);
 	List<Videos> getPageList(PageDto dto);
-	int listCount(Map<String,Object> );
+	int listCount(Map<String,Object> map);
 	int insert(Videos video);
 	int update(Videos video);
 	int updateReadCnt(int vidx);
