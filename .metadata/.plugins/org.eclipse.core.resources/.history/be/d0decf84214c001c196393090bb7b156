@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h2><a href="/">아보카도</a></h2>
+	
+	<div th:if="${user != null}">
+		[[${sessionScope.user.name}]]님([[${sessionScope.user.email }]])
+		<a href="user/detail">나의 정보</a>
+		<a href="logout">로그아웃</a>
+	</div>
+	<div th:unless="${user != null}">
+		<a href="login">로그인</a>
+		<a href="user/join?start=1">회원가입</a>
+	</div>
+	
+	<nav class="navigation">
+		<a href="/video">운동영상</a>
+		<a href="#">자유게시판</a>
+		<a href="#">밀키트</a>
+		<a href="#">헬스장정보</a>
+		<a href="#">마이페이지</a>
+	</nav>
+</body>
+</html>
