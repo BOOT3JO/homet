@@ -28,13 +28,11 @@
 	<div class="">
 		<table>
 			<tr>
-				<td>제목</td>
 				<td th:text="${video.subject}"></td>
 			</tr>
 			<tr>
-				<td>작성일</td>
 				<td th:text="${#calendars.format(video.reg_date,'yyyy-MM-dd')}"></td>
-				<td>조회수</td>
+				<th>조회수</th>
 				<td th:text="${video.read_cnt}"></td>
 			</tr>
 		</table>
