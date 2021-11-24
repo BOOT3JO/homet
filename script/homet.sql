@@ -10,7 +10,7 @@ create table users(
 	primary key (uidx)
 );
  ALTER TABLE users ADD (addr varchar(50) not null);
-insert into users values (0,'admin','관리자','admin@naver.com','111111',99,'남',null,'서울시');
+insert into users values (0,'admin','관리자','admin@naver.com',sha2('1111111',256),99,'남',null,'서울시');
 
 drop table users;
 

@@ -12,7 +12,7 @@
 <a href="#">헬스장정보</a><br>
 <a href="user/mypage">마이페이지</a><br>
 <div th:if="${user !=null }">  <!-- customer는 세션애트리뷰트입니다. -->
-	[[${user.name}]]님([[${user.email}]]) 환영합니다.<br>
+	[[${session.user.name}]]님([[${user.email}]]) 환영합니다.<br>
 	
 	<a href="logout">로그아웃</a><br>
 </div>

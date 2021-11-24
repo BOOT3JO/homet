@@ -47,11 +47,12 @@ public class LoginController {
 	//메소드 매개변수 (Customer customer 일때, @ModelAttribute("customer") Customer customer 에서 생략된 상태
 	public String loginOk(String email, String password ,Model model,HttpSession session) {  //customer 가 모델객체입니다.(로그인정보 저장된상태)
 		//로그인 정보 일치하는지 확인.	//홈에서 패스워드 지우는 방법2
-		User result = service.login(User.builder().email(email).password(password).build());
+		 User result = service.login(User.builder().email(email).password(password).build());
 		//customer.setPassword(""); //홈에서 패스워드 지우는 방법1
 		if(result != null) {
 			//로그인 성공- session에 result 저장합니다.
 			model.addAttribute("user", result);//위에서 customer를 세션애튜리뷰트 설정함...
+			session.setAttribute("user", result);
 			System.out.println(session.getAttribute("user"));
 			System.out.println(model);
 			return "home";   //정상 로그인 후 -> home.jsp(뷰)
