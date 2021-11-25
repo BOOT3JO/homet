@@ -13,11 +13,6 @@
  		select * from mealkit where midx=#{midx}
  	</select>
  	
- 	<insert id="insertOrder" parameterType="Orders">
- 		insert into orders (nickname, order_list, del_date) 
- 		values(#{nickname}, #{order_list}, #{del_date})
- 	</insert>
- 	
  	<select id="getOrdersByNickname" resultType="Orders" parameterType="String">
  		select * from orders where nickname=#{nickname}
 		and DATE(del_date) > DATE(NOW())-1
@@ -26,5 +21,11 @@
  	<select id="getSetByCategory" resultType="SetMenu" parameterType="String">
  		select * from set_menu where category=#{category}
  	</select>
+ 	
+ 	<insert id="insertOrder" parameterType="Orders">
+	   	insert into orders (nickname,order_list,del_date)
+	   	values(#{nickname},#{order_list},DATE_ADD(now(), interval 1 DAY))
+   	</insert>
+ 	
  	
  </mapper>

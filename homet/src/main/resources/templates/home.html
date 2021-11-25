@@ -10,9 +10,10 @@
 <a href="#">자유게시판</a><br>
 <a href="/mealkit/">밀키트</a><br>
 <a href="#">헬스장정보</a><br>
-<a href="#">마이페이지</a><br>
+<a href="user/mypage">마이페이지</a><br>
+<a href="/mealkit/cart">장바구니</a><br>
 <div th:if="${user !=null }">  <!-- customer는 세션애트리뷰트입니다. -->
-	[[${sessionScope.user.name }]]님([[${sessionScope.user.email }]]) 환영합니다.<br>
+	[[${session.user.name }]]님([[${user.email }]]) 환영합니다.<br>
 	<a href="user/detail">나의 정보</a><br>
 	<a href="logout">로그아웃</a><br>
 </div>

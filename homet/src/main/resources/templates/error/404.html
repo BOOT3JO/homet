@@ -1,0 +1,25 @@
+<!DOCTYPE html> <html xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:th="http://www.thymeleaf.org" 
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+layout:decorate="~{layout/default_layout}"> 
+
+<th:block layout:fragment="head"> 
+<title>Spring Boot 404 Error PAGE</title> 
+<!--/* 이 영역에 공통으로 사용할 css, js library를 선언한다. */--> 
+<link href="#" rel="stylesheet" /> </th:block>
+ <body> 
+ 
+ <h1>This is 404 Error Page!</h1> 
+ <div> 
+ 	CODE: <span th:text="${code}"></span><br>
+ 	MSG: <span th:text="${msg}"></span><br> 
+ 	TIMESTAMP: <span th:text="${timestamp}"></span><br> 
+ 	
+ 	
+ </div> 
+  <button onclick="history.back()">Back</button>
+ <input type="button" th:value="처음으로" th:onclick="location.href='/'"/>
+ 
+ </body> 
+ 
+ </html>
