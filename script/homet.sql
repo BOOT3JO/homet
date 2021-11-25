@@ -55,3 +55,11 @@ create table freeboard(
 	primary key (fidx),
 	foreign key (nickname) references users(nickname)
 );
+-- likes
+create table likes(
+   lidx int,
+   nickname varchar(30),
+   fidx int,
+   foreign key(nickname) references users(nickname),
+   foreign key(fidx) references freeboard(fidx)
+);
