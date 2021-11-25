@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
  * Handles requests for the application home page.
  */
 @Controller
-@SessionAttributes("serverTime")   //serverTime 이름의 애트리뷰트는 sessionScope이다.
+@SessionAttributes("user")
 public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);

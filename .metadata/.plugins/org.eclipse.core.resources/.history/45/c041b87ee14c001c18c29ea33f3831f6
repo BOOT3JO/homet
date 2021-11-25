@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>홈화면</title>
+<link rel="stylesheet" href="/resources/css/header.css">
+</head>  <!--not #strings.isEmpty(customer)  -->
+<body>
+<div class="header">
+	<div class="logo">
+		<h2><a href="/">아보카도</a></h2>
+	</div>
+	
+	<div class="user" th:if="${user != null}">
+		[[${sessionScope.user.name}]]님([[${sessionScope.user.email }]])
+		<a href="user/detail">나의 정보</a>
+		<a href="#">마이페이지</a>
+		<a href="logout">Logout</a>
+	</div>
+	<div class="user" th:unless="${user != null}">
+		<a href="login">Login</a>
+	</div>
+	
+	<nav class="navigation">
+		<a href="/video">VIDEOS</a>
+		<a href="#">BOARD</a>
+		<a href="#">MEALKIT</a>
+		<a href="#">HEALTH</a>
+	</nav>
+</div>
+</body>
+</html>

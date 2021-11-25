@@ -1,0 +1,52 @@
+@charset "UTF-8";
+/* @import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+
+body {
+	width: 100%;
+	font-family: 'Do Hyeon', sans-serif;
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+a {
+	text-decoration:none;
+	color: brown;
+}
+a:hover {
+	color: green;	/* 마우스 올렸을 때 색상 변화 */
+}
+.header {
+	width: 100%;
+	height: 80%;
+	margin-top: 20px;
+	margin-left: 28px;
+}
+.logo {
+	width: 95%;
+	padding-right: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border: solid 1px gray;
+	display: flex;
+	justify-content: center;
+}
+.user {
+	width: 95%;
+	padding-right: 10px;
+	border: solid 1px gray;
+	display: flex;
+	justify-content: flex-end;
+}
+.navigation {
+	width: 94%;
+	height: 40px;
+	border: solid 1px gray;
+	display: flex;
+	flex-flow: nowrap;
+	justify-content: space-around;
+    padding: 12px 15px;
+}
+.navigation>li {
+	list-style: none;
+	font-size: 20px;
+}

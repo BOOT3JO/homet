@@ -1,0 +1,33 @@
+@charset "UTF-8";
+
+/* 본문내용이 있다면 반응형 때 세로로 변화하도록 */
+@media screen and (max-width:768px) {   
+	#mainbanner {
+		display: none;
+   }
+	#mainbanner2 {
+		display: block;
+	}
+}
+
+@media screen and (min-width:768px) {   /* 768px 이하 일 때 작은 배너 보여주기 */
+	#mainbanner {
+		display: block;
+   }
+	#mainbanner2 {
+		display: none;
+	}
+}
+body {
+	width: 100%;
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+#mainbanner {
+	width: 98%;
+	margin: 0px;
+}
+#mainbanner2 {
+	width: 98%;
+	margin: 10px;
+}

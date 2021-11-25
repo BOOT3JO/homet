@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>운동영상(상세)</title>
+<link rel="stylesheet" href="/resources/css/header.css">
+</head>
+<body>
+	<div th:fragment="menu" th:replace="include/header :: menu"></div>
+	
+	<div class="">
+		<table>
+			<tr>
+				<td th:text="${video.subject}"></td>
+			</tr>
+			<tr>
+				<td th:text="${#calendars.format(video.reg_date,'yyyy-MM-dd')}"></td>
+				<th>조회수</th>
+				<td th:text="${video.read_cnt}"></td>
+			</tr>
+		</table>
+		
+		<iframe width="700" height="400" th:src="${video.url}" title="YouTube video player" frameborder="0" 
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>	
+		<pre>[[${video.content}]]</pre>
+		
+		<a th:href="@{/videoupdate?(vidx=${video.vidx},page=${page},category=${video.category})}"><button type="button">수정</button></a>
+		<a th:href="@{/videodelete?(page=${page})}"><button type="button">삭제</button></a>
+		<a th:href="@{/video?(page=${page})}"><button type="button">목록</button></a>
+	</div>
+	
+
+</body>
+</html>

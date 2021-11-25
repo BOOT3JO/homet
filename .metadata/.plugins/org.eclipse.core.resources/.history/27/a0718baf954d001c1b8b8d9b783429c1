@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Footer</title>
+</head>
+<body>
+	<div class="footer" th:fragment="footer">
+		<hr>
+		아래에 footer 내용을 넣을거에요~
+	</div>
+</body>
+</html>

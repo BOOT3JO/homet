@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>아보카도</title>
+<link rel="stylesheet" href="/resources/css/header.css">
+<link rel="stylesheet" href="/resources/css/main.css">
+<link rel="stylesheet" href="/resources/css/footer.css">
+</head>
+<body>
+	<div th:fragment="menu" th:replace="include/header :: menu"></div>
+	
+	<div>
+		<div><h1>배너 이미지</h1>
+		
+		
+		</div>
+		<div>
+		
+		</div>
+	</div>
+	
+	<div th:fragment="footer" th:replace="include/footer :: footer"></div>	<!-- footer include 할 예정 -->
+</body>
+</html>

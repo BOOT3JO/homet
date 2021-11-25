@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+body {
+	width: 100%;
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+.footer {
+	
+}
+.footer>hr {
+	color: green;
+}

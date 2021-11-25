@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>아보카도</title>
+<link rel="stylesheet" href="/resources/css/header.css">
+</head>  <!--not #strings.isEmpty(customer)  -->
+<body>
+	<div th:fragment="menu" th:replace="include/header :: menu"></div>
+	
+	<!-- 아래로 본문 내용~! -->
+	
+</body>
+</html>

@@ -62,6 +62,15 @@ create table freeboard(
 	foreign key(nickname) references users(nickname)
 );
 -- ---------------------------------------------------
+-- likes
+create table likes(
+   lidx int,
+   nickname varchar(30),
+   fidx int,
+   foreign key(nickname) references users(nickname),
+   foreign key(fidx) references freeboard(fidx)
+);
+-- ---------------------------------------------------
 -- videos 데이터 (카테고리 : 홈트, 웨이트, 요가, 스트레칭)
 
 -- 홈트

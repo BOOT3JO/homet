@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+/* 본문내용이 있다면 반응형 때 세로로 변화하도록 */
+
+body {
+	width: 100%;
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+#mainbanner {
+	width: 100%;
+	margin: 10px;
+}

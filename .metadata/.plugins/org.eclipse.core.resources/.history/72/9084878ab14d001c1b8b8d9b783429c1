@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+body {
+	width: 100%;
+	overflow-x:hidden;
+	overflow-y:auto;
+}
+.footer {
+	font-size: 13px;
+}
+.footer>hr {
+	color: #9ACF81;
+}

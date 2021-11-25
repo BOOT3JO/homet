@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Footer</title>
+</head>
+<body>
+	<div class="footer">
+		<hr>
+	</div>
+</body>
+</html>
