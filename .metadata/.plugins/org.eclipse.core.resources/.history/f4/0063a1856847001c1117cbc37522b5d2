@@ -1,6 +1,0 @@
-package com.homet.ropository;
-
-
-public interface HealthRepository {
-	
-}

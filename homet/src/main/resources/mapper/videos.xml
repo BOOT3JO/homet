@@ -24,8 +24,11 @@
 		order by vidx desc LIMIT #{startNo},#{pageSize}
 	</select>
 	
-	<select id="listCount" resultType="int">
+	<select id="listCount" resultType="int" parameterType="java.util.Map">
 		SELECT count(*) FROM videos
+			<if test="category != null">
+				where category=#{category}
+			</if>
 	</select>
 	
 	<insert id="insert" parameterType="Videos" useGeneratedKeys="true" keyProperty="vidx">

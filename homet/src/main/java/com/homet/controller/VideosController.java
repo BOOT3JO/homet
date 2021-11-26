@@ -45,7 +45,7 @@ public class VideosController {
 		String category = (String) param.get("category");
 		
 		
-		totalCount=service.listCount();   //서비스 메소드 타입 변경예정
+		totalCount=service.listCount(param);
 		
 		pageDto=new PageDto(currentPage, pageSize, totalCount, category);
 		list = service.getPageList(pageDto);
@@ -67,7 +67,7 @@ public class VideosController {
 			readvidx += "/" + vidx;
 			service.updateReadCnt(vidx);
 		}
-		System.out.println(vidx+"디테일");
+		
 		Cookie cookie = new Cookie("read", readvidx);
 		cookie.setMaxAge(30*60);
 		cookie.setPath("/videos");
@@ -116,6 +116,7 @@ public class VideosController {
 		model.addAttribute("category", video.getCategory());
 		
 		String url = "redirect:videodetail?&vidx="+vidx+"&page="+page;
+		// redirect 할 때 vidx, page 값이 넘어가지 않아서 url에 저장한 주소값을 리턴했습니다.
 		
 		return url;
 	}

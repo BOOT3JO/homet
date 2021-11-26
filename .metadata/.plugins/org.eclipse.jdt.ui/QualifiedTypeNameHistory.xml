@@ -41,4 +41,7 @@
     <fullyQualifiedTypeName name="com.homet.service.HealthService"/>
     <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="org.springframework.lang.Nullable"/>
+    <fullyQualifiedTypeName name="java.util.Date"/>
+    <fullyQualifiedTypeName name="java.io.File"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.SessionAttributes"/>
 </qualifiedTypeNameHistroy>

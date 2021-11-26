@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.homet.model.Health;
@@ -16,19 +17,20 @@ import com.homet.service.HealthService;
 
 @Controller
 @RequestMapping("/health")
+@SessionAttributes("user")
 public class HealthController {
 	
 	@Autowired
 	HealthService service;
 	
-	@RequestMapping(value="/", method = RequestMethod.GET)
+	@RequestMapping(value="", method = RequestMethod.GET)
 	public String healthView() {
-		return "health";
+		return "health/health";
 	}
 	
-	@RequestMapping(value="/kakaoMap", method = RequestMethod.GET)  //헬스장 위치조회
+	@RequestMapping(value="/healthMap", method = RequestMethod.GET)  //헬스장 위치조회
 	public String kakaoMap() {
-		return "kakaoMap";
+		return "health/healthMap";
 	}
 	
 	
@@ -40,12 +42,12 @@ public class HealthController {
 		return mav;
 	}
 
-	@RequestMapping(value = "/list", method = RequestMethod.GET)  //전체 리스트 조회
+	@RequestMapping(value = "/healthlist", method = RequestMethod.GET)  //전체 리스트 조회
 	public String healthList(Model model) {
 		
 		model.addAttribute("list", service.healthList() );
 		
-		return "healthlist";
+		return "health/healthlist";
 	}
 	
 	//@RequestMapping(value="view", method = RequestMethod.GET)
@@ -62,7 +64,7 @@ public class HealthController {
 		
 //		model.addAttribute("search",service.healthSearch());
 		
-		return "healthView";
+		return "health/healthView";
 		
 	}
 	
@@ -71,7 +73,7 @@ public class HealthController {
 		
 		model.addAttribute("search",service.healthSearch(health));
 		
-		return "healthView";
+		return "health/healthView";
 		
 	}
 	/*

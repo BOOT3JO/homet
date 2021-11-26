@@ -1,5 +1,0 @@
-package com.homet.service;
-
-public interface HealthService {
-
-}

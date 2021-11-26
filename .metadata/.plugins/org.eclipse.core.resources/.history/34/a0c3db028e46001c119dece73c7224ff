@@ -1,9 +1,0 @@
-package mapper;
-
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Param;
-
-public interface HealthMapper {
-	@Insert("INSERT INTO health(name,address) VALUES(#{name},#{address}")
-	int insert(@Param("health") Health health);
-}

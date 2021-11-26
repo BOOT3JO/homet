@@ -19,6 +19,10 @@ public class PageDto {
 	private int startPage;		//페이지 안에 띄울 게시글 시작 idx
 	private int endPage;		//페이지 안에 띄울 게실글 끝 idx
 	
+	//검색에 필요한 값 자유게시판
+
+	
+	//
 	private String category;
 	
 	//생성자
@@ -39,6 +43,7 @@ public class PageDto {
 		endPage = endPage > totalPage ? totalPage : endPage;   //마지막 페이지목록에서 필요함.
 		
 		this.category = category;
+		
 	}
 
 	

@@ -8,7 +8,7 @@
 	<h2><a href="/">HomeT</a></h2>
 	
 	<div th:if="${user != null}">
-		[[${sessionScope.user.name}]]님([[${sessionScope.user.email }]])
+		[[${user.name}]]님([[${user.email }]])
 		<a href="user/detail">나의 정보</a>
 		<a href="logout">로그아웃</a>
 	</div>

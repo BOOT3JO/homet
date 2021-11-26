@@ -1,6 +1,7 @@
 package com.homet.service;
 
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -36,8 +37,8 @@ public class VideosServiceImpl implements VideosService {
 	}
 	
 	@Override
-	public int listCount() {
-		return dao.listCount();
+	public int listCount(Map<String,Object> map) {
+		return dao.listCount(map);
 	}
 
 	@Override
