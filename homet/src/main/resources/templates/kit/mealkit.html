@@ -59,7 +59,9 @@
 	<div id="kitbox">
 	
 	</div>
+	<div id="price_all">
 	
+	</div>
 		<button onclick="cartBtn()">지금 바로 구매</button>
 		<button onclick="cartChoiceBtn()">장바구니에 담기</button>
 		
@@ -68,13 +70,15 @@
 	<script type="text/javascript">
 	// idx 담을 배열 선언
 	let idxList = new Array();	// const 로 선언하면 상수라서 변경이 불가!! let으로 선언할 것!
+	let price_all = 0;
+	document.getElementById("price_all").innerHTML="총 액 : "+price_all + "원";
 	
 	const $kitbox = document.getElementById('kitbox');
 	
 	const add_kit = function(name, price, idx){
 	      /* 자식 노드 추가 */
 	      const $new = "<div>"+ name +"    "+ price +"원"+
-	      '<button onclick="delete_row(this,'+ idx+ ')">x</button></div>';
+	      '<button onclick="delete_row(this,'+ idx+","+ price+ ')">x</button></div>';
 	      
 	      const $div = document.createElement('div');       // 새로운 요소 생성. - ul 태그
 	      $div.innerHTML = $new;
@@ -84,15 +88,19 @@
 	      $div.classList.add('item01'); */
 	      idxList.push(idx);	// 배열에 해당 idx 담기!!
 	      console.log(idxList);
+	      price_all+= parseInt(price);
+		  document.getElementById("price_all").innerHTML="총 액 : "+ price_all + "원";
 	    }
 	
 	// x 버튼 클릭 함수
-	const delete_row = function(me, idx){
+	const delete_row = function(me, idx, price){
 		me.parentNode.remove();
 		const value = idx;
 		idxList = idxList.filter(item => item !== value);	// 배열에서 해당 idx 제거 !!
 		
 		console.log(idxList);
+		price_all-= parseInt(price);
+		  document.getElementById("price_all").innerHTML="총 액 : "+price_all + "원";
 	}
 	
 	// meat 보이기 버튼
@@ -135,7 +143,7 @@
 		}
 		console.log(idx_list);
 		
-		window.location.href="/mealkit/cart?idx_list=" + idx_list;
+		window.location.href="/mealkit/cart?type=mealkit&idx_list=" + idx_list+"&price="+price_all;
 	}
 	
 	// 장바구니에 담기
@@ -146,8 +154,8 @@
 		}
 		
 		let y = confirm("kit를 장바구니에 담았습니다.\n장바구니로 이동할까요?");
-		if(y) window.location.href="/mealkit/cart?idx_list=" + idx_list;
-		else window.location.href="/mealkit/?idx_list=" + idx_list;
+		if(y) window.location.href="/mealkit/cart?type=mealkit&idx_list=" + idx_list+"&price="+price_all;
+		else window.location.href="/mealkit/?type=mealkit&idx_list=" + idx_list+"&price="+price_all;
 	}
 	
 	

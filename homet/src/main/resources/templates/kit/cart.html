@@ -9,7 +9,18 @@
 	<a href="/">홈으로</a>
 	<div th:each="kit, i : ${session.cart}">
 		<div th:text="|밀키트${i.index+1}|"></div>
-		<ul th:each="vo : ${kit}">
+		<div th:text="|${kit.price}원|"></div>
+		<ul th:each="vo : ${kit.list}">
+			<li>
+				<span th:text="${vo.name}"></span>
+				<span th:text="${vo.price}"></span>
+			</li>
+		</ul>
+	</div>
+	<div th:each="kit, i : ${session.cart_set}">
+		<div th:text="${kit.name}"></div>
+		<div th:text="|${kit.price}원|"></div>
+		<ul th:each="vo : ${kit.list}">
 			<li>
 				<span th:text="${vo.name}"></span>
 				<span th:text="${vo.price}"></span>

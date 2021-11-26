@@ -1,6 +1,7 @@
 package com.homet.controller;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.StringTokenizer;
 
@@ -32,18 +33,28 @@ public class MealkitController {
 	
 	//이게 밀키트 메인 페이지
 	@RequestMapping(value = {"/","/mealkitHome"})
-	public String mealkithome(HttpSession session, @SessionAttribute("cart") List<List<Mealkit>> cart, String idx_list) {
+	public String mealkithome(HttpSession session, @SessionAttribute("cart") List<HashMap<String,Object>> cart, 
+			@SessionAttribute("cart_set") List<HashMap<String,Object>> cart_set, 
+			String idx_list, String price, String type, String name) {
 		
-		if(idx_list != null) {	// 카트에 담고 mealkitHome 으로 올때 동작
-			List<Mealkit> list = new ArrayList<Mealkit>();
-			
-			StringTokenizer token = new StringTokenizer(idx_list, "/");
-			while(token.hasMoreTokens()) {
-				Mealkit meal = service.getByIdx(Integer.parseInt(token.nextToken()));
-				list.add(meal);
-			}
-			cart.add(list);
-			session.setAttribute("cart", cart);
+		if(type != null && idx_list!= null) {	// 카트에 담고 mealkitHome 으로 올때 동작
+				List<Mealkit> list = new ArrayList<Mealkit>();
+				HashMap<String, Object> map = new HashMap();
+				StringTokenizer token = new StringTokenizer(idx_list, "/");
+				while(token.hasMoreTokens()) {
+					Mealkit meal = service.getByIdx(Integer.parseInt(token.nextToken()));
+					list.add(meal);
+				}
+				map.put("price", price);
+				map.put("list", list);
+				if(type.equals("mealkit")) {	// 밀키트 만들기일때
+					cart.add(map);
+					session.setAttribute("cart", cart);
+				}else {	//세트메뉴 일때 이름도 받아서 넘김
+					map.put("name", name);
+					cart_set.add(map);
+					session.setAttribute("cart_set", cart_set);
+				}
 		}
 		
 		return "kit/mealkitHome";
@@ -92,28 +103,34 @@ public class MealkitController {
 	
 	// 장바구니에 담고 장바구니로 이동
 	@RequestMapping(value = "/cart", params = "idx_list")
-	public String cart2(@RequestParam String idx_list, Model model, HttpServletRequest request) {
+	public String cart2(@RequestParam String idx_list, Model model, HttpServletRequest request,
+			@SessionAttribute("cart") List<HashMap<String,Object>> cart,
+			@SessionAttribute("cart_set") List<HashMap<String,Object>> cart_set, 
+			String price, String type, String name) {
 		HttpSession session = request.getSession();
 		
 		//list에 list를 담음			// 세션에서 장바구니 불러옴
 		if(idx_list != null) {
-			List<List<Mealkit>> cart = (List<List<Mealkit>>) session.getAttribute("cart");
-			
 			List<Mealkit> list = new ArrayList<Mealkit>();
-			
+			HashMap<String, Object> map = new HashMap();
 			StringTokenizer token = new StringTokenizer(idx_list, "/");
 			while(token.hasMoreTokens()) {
 				Mealkit meal = service.getByIdx(Integer.parseInt(token.nextToken()));
-				list.add(meal);	//재료정보를 누적해서 밀키트에 담음
+				list.add(meal);
 			}
-			cart.add(list);		//장바구니에 밀키트 하나 추가!
-			session.setAttribute("cart", cart);
+			map.put("price", price);
+			map.put("list", list);
+			if(type.equals("mealkit")) {	// 밀키트 만들기일때
+				cart.add(map);
+				session.setAttribute("cart", cart);
+			}else {	//세트메뉴 일때 이름도 받아서 넘김
+				map.put("name", name);
+				cart_set.add(map);
+				session.setAttribute("cart_set", cart_set);
+			}
 		}
-		System.out.println(idx_list);
 		return "kit/cart";
 	}
-	
-	
 	
 	
 	//추천 세트 모음 페이지
@@ -144,25 +161,43 @@ public class MealkitController {
 		HttpSession session = request.getSession();		//로그인 한 id의 것만 보여주려고
 		User user = (User)session.getAttribute("user");	//세션에서 user 정보 가져오기
 		
-		if(type != null && type.equals("1")) {
-			List<List<Mealkit>> cart = (List<List<Mealkit>>)session.getAttribute("cart");//세션에서 cart 정보 가져오기
+		if(type != null && type.equals("1")) {	//주문하기 insert 할때
+			List<HashMap<String,Object>> cart = (List<HashMap<String,Object>>)session.getAttribute("cart");
+			List<HashMap<String,Object>> cart_set = (List<HashMap<String,Object>>)session.getAttribute("cart_set");
 			List<String> idx_lists = new ArrayList<String>();
 			
-			for(List<Mealkit> list : cart) {
+			// cart 인서트
+			for(HashMap<String, Object> map : cart) {
 				String idx_list = "";
+				List<Mealkit> list = (List<Mealkit>)map.get("list");	//cart에서 list 꺼내기
 				for(Mealkit vo : list) {
 					idx_list += "/" + vo.getMidx();
 				}
 				idx_lists.add(idx_list);
 			}
-			// 인서트 하는곳
+			// cart_set 인서트
+			for(HashMap<String, Object> map : cart_set) {
+				String idx_list = "";
+				List<Mealkit> list = (List<Mealkit>)map.get("list");	//cart에서 list 꺼내기
+				for(Mealkit vo : list) {
+					idx_list += "/" + vo.getMidx();
+				}
+				idx_lists.add(idx_list);
+			}
+			// 인서트 하는곳 // 만든거, 세트메뉴 한번에 인서트
 			for(String x : idx_lists) {	
 				Orders order = Orders.builder().nickname(user.getNickname()).order_list(x).build();
 				service.insertOrder(order); //밀키트 하나씩 insert
 			}
 			
 		}
+		// 장바구니 초기화
+		List<HashMap<String, Object>> cart = new ArrayList<HashMap<String, Object>>();
+		List<HashMap<String, Object>> cart_set = new ArrayList<HashMap<String, Object>>();
+		session.setAttribute("cart", cart);
+		session.setAttribute("cart_set", cart_set);
 		
+		// 주문하고 주문내역 보여주기, 그냥 구매내역 볼때 보여주기
 		List<Orders> orderList = service.getOrdersByNickname(user.getNickname());
 		model.addAttribute("orderList",orderList);
 		System.out.println(orderList);
@@ -170,7 +205,7 @@ public class MealkitController {
 	}
 	
 	@RequestMapping(value = "/chooseDetail")
-	   public String setDetail1(Model model,@RequestParam String idx_list) {
+	   public String setDetail1(Model model,@RequestParam String idx_list, String price, String name) {
 		System.out.println(idx_list);
 	      List<Mealkit> meal_list = new ArrayList<Mealkit>();
 	      StringTokenizer token = new StringTokenizer(idx_list, "/");
@@ -181,11 +216,11 @@ public class MealkitController {
 	      }
 	      
 	      model.addAttribute("meal_list",meal_list);
-	      return "kit/set1detail";
+	      model.addAttribute("idx_list",idx_list);
+	      model.addAttribute("price",price);
+	      model.addAttribute("name",name);
+	      return "kit/setdetail";
 	   }
-	
-	
-	
 	
 	@RequestMapping(value = "/chooseSet", params = "category=2")
 	public String setList2() {
@@ -206,11 +241,5 @@ public class MealkitController {
 	public String setList5() {
 		return "kit/set5.html";
 	}
-	
-	
-	
-	
-	
-	
 	
 }
