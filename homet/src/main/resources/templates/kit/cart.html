@@ -9,7 +9,8 @@
 	<a href="/">홈으로</a>
 	<div th:each="kit, i : ${session.cart}">
 		<div th:text="|밀키트${i.index+1}|"></div>
-		<div th:text="|${kit.price}원|"></div>
+		<span th:text="${kit.price}" class="price"></span>
+		<span>원</span>
 		<ul th:each="vo : ${kit.list}">
 			<li>
 				<span th:text="${vo.name}"></span>
@@ -19,7 +20,8 @@
 	</div>
 	<div th:each="kit, i : ${session.cart_set}">
 		<div th:text="${kit.name}"></div>
-		<div th:text="|${kit.price}원|"></div>
+		<span th:text="${kit.price}" class="price"></span>
+		<span>원</span>
 		<ul th:each="vo : ${kit.list}">
 			<li>
 				<span th:text="${vo.name}"></span>
@@ -27,10 +29,22 @@
 			</li>
 		</ul>
 	</div>
+	<div id="price_all"></div>
 	<button onclick="order()">주문하기</button>
 </body>
 
 <script type="text/javascript">
+
+	let price_all = 0;
+	const $price = document.getElementsByClassName("price");
+	
+	for( let i = 0; i < $price.length; i++ ){ 
+		let price = $price.item(i).innerText;
+		price_all+= parseInt(price);
+	}
+	
+	document.getElementById("price_all").innerHTML = "총 결제금액 : " + price_all + "원";
+	
 	const order = function(){
 		window.location.href="/mealkit/order?type=1";
 	}
