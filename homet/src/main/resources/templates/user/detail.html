@@ -3,13 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="../resources/css/detail.css">
 </head>
 <body>
-<form th:action="@{update}"  method="GET" >
-  <div >회원정보</div>
+<section>
+
     <ul>
+  <h3>회원정보</h3>
       <li >
-         
         <div >이메일</div>
         <input type="text" name="email"   readonly th:value="${user.email }"> 
       </li>
@@ -33,18 +34,19 @@
       
       <li >
         <div >주소</div>
-        <input name="addr"  readonly th:value="${user.addr }">
+        <input name="addr"   th:value="${user.addr }" readonly>
       </li>
       <li>
         <div >닉네임</div>
         <input type="text" name="nickname" th:value="${user.nickname }" readonly>
       </li>
       <li>
-        <input type="submit" value="수정 하기" >
-        <input type="button" value="홈으로" th:onclick="location.href='../home'" >
+        <input type="button" id="submit" value="수정 하기"  th:onclick="location.href='update'">
+        <input type="button" id="home" value="홈으로" th:onclick="location.href='../home'" >
         
       </li>
     </ul>
-</form>
+
+</section>
 </body>
 </html>
