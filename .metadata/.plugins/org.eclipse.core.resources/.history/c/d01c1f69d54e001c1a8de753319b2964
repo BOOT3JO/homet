@@ -1,0 +1,23 @@
+@charset "UTF-8";
+section{
+	 display: flex;
+	justify-content: center;
+	margin: auto;
+}
+th{
+	border: 2px solid #00e676;
+	 background-color: #fff;
+	 border-radius: 20px;
+	 padding: 10px 20px;
+}
+input{
+	border: 1px solid;
+	 border-radius: 5px;
+	 
+	 margin-left: 15px;
+}
+#submit{
+	 background-color: #fff;
+	  border-radius: 50px;
+	  border: 2px solid #5d4037;
+}

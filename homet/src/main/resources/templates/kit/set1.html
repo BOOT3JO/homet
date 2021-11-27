@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>벌크업 set</title>
+</head>
+<body>
+	<h1>벌크업 set</h1>
+	<ul th:each="set : ${setList}">
+		<li>
+			<ul>
+				<li>
+					<a th:href="@{/mealkit/chooseDetail(idx_list=${set.idx_list},price=${set.price},name=${set.name})}" 
+					th:text="${set.name}">세트명</a>
+				</li>
+				<li th:text="${set.price}">가격</li>
+			</ul>
+		</li>	
+	</ul>
+</body>
+</html>

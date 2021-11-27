@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+	<head>
+	<meta charset="UTF-8">
+	<title>자유게시판 글쓰기</title>
+</head>
+<body>
+
+	<form action="/save">
+        
+        <div class="Subject">
+        	<input type="text" id="subject" name="subject" placeholder="제목"> <br>
+        </div>
+        
+        <div class="Nickname">
+        	<input type="text" id="nickname" name="nickname" th:value="${user.nickname}"> <br>
+        </div>
+        
+        <div class="Content">
+        	<textarea id="content" name="content" rows="15" cols="50"
+        	placeholder="작성하실 내용을 입력해주세요."></textarea><br>
+		</div>
+		
+		<div class="Hashtag">
+			<input type="text" id="hashtag" name="hashtag" placeholder="태그 입력" >
+		</div>
+			
+		<div class="File">
+			<input type="file" name="fimage" accept="image/*" multiple>	
+		</div>
+		
+		<div class="writebtn">
+        	<button type="submit">등록</button>
+        	<button type="reset">취소</button>
+        	<a href="/list">목록</a>
+    	</div>
+    	
+    </form>
+
+</body>
+</html>
+
+
+
+

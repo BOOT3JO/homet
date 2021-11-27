@@ -1,0 +1,52 @@
+@charset "UTF-8";
+
+section{
+	display: flex;
+	justify-content: center;
+	margin: auto;
+}
+tr {
+	margin: 5px;
+}
+th{
+	border: 1px solid #9ACF81;
+	background-color: #9ACF81;
+	border-radius: 20px;
+	color: #fff;
+	padding: 10px 20px;
+}
+input{
+	border: 1px solid;
+	border-radius: 5px;
+	margin-left: 15px;
+	padding: 10px 20px;
+}
+#gojoin {
+	background-color: #967B55;
+	color: #fff;
+	border-radius: 50px;
+	border: 1px solid #967B55;
+}
+#idfind, #password {
+	background-color: #967B55;
+	color: #fff;
+	border-radius: 50px;
+	border: 1px solid #967B55;
+	margin-top: 3%;
+}
+#idfind:hover, #password:hover, #gojoin:hover {
+	cursor: pointer;
+}
+#submit{
+	 background-color: #967B55;
+	 color: #fff;
+	 border-radius: 50px;
+	 border: 1px solid #967B55;
+}
+#submit:hover {
+	cursor: pointer;
+}
+.kakao {
+	margin-top: 10%;
+	margin-left: 100%;
+}

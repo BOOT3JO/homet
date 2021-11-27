@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+section{
+	width: 500px; 
+	 margin:  auto;
+
+}
+input{
+ background-color: #967B55;
+	  border-radius: 50px;
+	  border: 1px solid #967B55;
+}
+div{
+	text-align: center;
+	margin: 10px;
+}
+span{
+	color:red;
+}

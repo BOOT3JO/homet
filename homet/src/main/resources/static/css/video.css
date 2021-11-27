@@ -1,4 +1,5 @@
 @charset "UTF-8";
+
 @import url('https://hangeul.pstatic.net/hangeul_static/css/nanum-square.css');
 
 body {
@@ -115,8 +116,18 @@ body {
 }
 
 /* detail css */
+#all{
+   margin: auto;
+   width: 100%;
+   max-width:70%;
+   padding:5%;
+   background:#fff;
+   border-radius:30px;
+   box-sizing:border-box;
+   box-shadow: 0 0 15px rgba(0,0,0,0.1);   
+}
 .detailtable {
-	margin-left: 24%;
+	margin-left: 7%;
 }
 .detailcontent {
 	padding: 20px;
@@ -124,7 +135,7 @@ body {
 }
 .detailbtn {
 	margin-top: 10px;
-	margin-left: 45%
+	text-align: center;
 }
 .detailbtn>a {
 	height: 40px;
@@ -165,7 +176,7 @@ textarea {
 }
 .registbtn {
 	margin-top: 10px;
-	margin-left: 45%
+	margin-left: 45%;
 }
 .registbtn>a, .registbtn>button[type=submit] {
 	height: 40px;

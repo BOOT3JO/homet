@@ -7,6 +7,7 @@ import java.util.Map;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.CookieValue;
@@ -14,10 +15,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
 import com.homet.model.PageDto;
+import com.homet.model.User;
 import com.homet.model.Videos;
+import com.homet.service.UserService;
 import com.homet.service.VideosService;
 
 @Controller
@@ -33,7 +37,7 @@ public class VideosController {
 	@RequestMapping("/video")
 	public String pageList(@RequestParam Map<String, Object> param, Model model) {
 		
-		int currentPage;//현재 페이지
+		int currentPage; //현재 페이지
 		List<Videos> list;
 		int totalCount; int pageSize=10;
 		String page=(String) param.get("page");

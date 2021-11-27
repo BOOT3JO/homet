@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" href="/resources/css/header.css">
+<link rel="stylesheet" href="/resources/css/board.css">
+<link rel="stylesheet" href="/resources/css/footer.css">
+	<head>
+	<meta charset="UTF-8">
+	<title>자유게시판 글쓰기</title>
+</head>
+<body>
+<div th:fragment="menu" th:replace="include/header :: menu"></div>
+	<form action="/save">
+        <table class="writetable">
+        <tr>
+			<td><h3 style="color: #967B55;">FREEBOARD UPLOAD</h3></td>
+		</tr>
+        <tr>
+        	<td><input type="text" id="subject" name="subject" placeholder="제목"></td>
+        </tr>
+        <tr>
+        	<td><input type="text" id="nickname" name="nickname" th:value="${user.nickname}"></td>
+        </tr>
+        <tr>
+        	<td><textarea id="content" name="content" rows="15" cols="50"
+        	placeholder="작성하실 내용을 입력해주세요."></textarea></td>
+		</tr>
+		<tr>
+			<td><input type="text" id="hashtag" name="hashtag" placeholder="태그 입력" ></td>
+		</tr>
+		<tr>
+			<td><input type="file" name="fimage" accept="image/*" multiple></td>
+		</tr>	
+		</table>
+		
+		<div class="writebtn">
+        	<button type="submit">등록</button>
+        	<button type="reset">취소</button>
+        	<a href="/list">목록</a>
+    	</div>
+    	
+    </form>
+
+</body>
+</html>
+
+
+
+

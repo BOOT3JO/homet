@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+section{
+	display: flex;
+	justify-content: center;
+	margin: auto;
+}
+.mypagemenu{
+	 list-style: none;
+}
+.mypagemenu>li{	
+	height: 40px;
+    padding: 0 13px;
+    border-radius: 20px;
+    border: 1px solid #9ACF81;
+    font-size: 13px;
+    color: #000;
+    line-height: 38px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #fff;
+    
+	display: inline-block;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+.menu>a{
+	text-decoration-line: none;
+	color:#00b248;
+}

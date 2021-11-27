@@ -8,15 +8,15 @@
 <div class="header" th:fragment="menu">
 	<header>
 		<div class="logo">
-			<a href="/"><img alt="mainlogo" src="/resources/image/mainlogo.png" id="mainlogo"></a>
+			<a href="/"><img alt="mainlogo" src="/resources/img/mainlogo.png" id="mainlogo"></a>
 		</div>
 		
 		<div class="user" th:if="${session.user != null}">
-			[[${session.user.name}]]님([[${session.user.email }]])&emsp;&emsp;
-			<a href="user/mypage">MyPage</a> / <a href="logout">Logout</a>
+			[[${session.user.name}]]님([[${session.user.email }]])&emsp;
+			<a href="../user/mypage">MyPage</a> / &emsp;<a href="../logout">Logout</a>
 		</div>
 		<div class="user" th:unless="${session.user != null}">
-			<a href="login">Login</a>
+			<a href="../login">Login</a>
 		</div>
 		
 		<nav>
@@ -24,7 +24,7 @@
 				<li><a href="/video">VIDEO</a></li>
 				<li><a href="/list">BOARD</a></li>
 				<li><a href="/mealkit/">MEALKIT</a></li>
-				<li><a href="/health/">HEALTH</a></li>
+				<li><a href="/health/healthMap">HEALTH</a></li>
 			</ul>
 		</nav>
 	</header>

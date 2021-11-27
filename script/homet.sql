@@ -13,6 +13,7 @@ create table users (
 
 alter table users add addr varchar(50) not null;
 insert into users values (0,'admin','관리자','admin@naver.com','111111',99,'남',null,'서울시');
+insert into users values (0,'admin','관리자','admin@naver.com',sha2('1111111',256),99,'남',null,'서울시');
 -- ---------------------------------------------------
 -- mealkit
 create table mealkit(
@@ -64,9 +65,10 @@ create table freeboard(
 -- ---------------------------------------------------
 -- likes
 create table likes(
-   lidx int,
+   lidx int auto_increment,
    nickname varchar(30),
    fidx int,
+   primary key(lidx),
    foreign key(nickname) references users(nickname),
    foreign key(fidx) references freeboard(fidx)
 );

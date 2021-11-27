@@ -5,6 +5,7 @@
 <title>운동영상</title>
 <link rel="stylesheet" href="/resources/css/header.css">
 <link rel="stylesheet" href="/resources/css/video.css">
+<link rel="stylesheet" href="/resources/css/footer.css">
 </head>
 <body>
 	<div th:fragment="menu" th:replace="include/header :: menu"></div>
@@ -44,8 +45,13 @@
 				</th:block>
 				</table>
 			</div>
+			
 			<div>
-				<a class="insert" th:href="@{/videoinsert?(page=${page.currentPage})}">글쓰기</a>
+			<th:block th:if="${session.user != null}">
+				<th:block th:if="${session.user.name == 'admin' || session.user.nickname == detail.nickname}">
+					<a class="insert" th:href="@{/videoinsert?(page=${page.currentPage})}">글쓰기</a>
+				</th:block>
+			</th:block>
 			</div>
 			<!-- 페이지 이동 : 자바의 T연산자를 이용하여 클래스 인스턴스를 지정하거나 클래스의 static 메소드를 사용할 수 있다.-->
 			<div th:if="${category==null}">
@@ -74,5 +80,7 @@
 			</div>
 			</div><!--  thymeleaf Numbers 클래스를 이용하여 배열생성 #numbers.sequence -->
 	</div> <!-- container -->
+	
+	<div th:fragment="footer" th:replace="include/footer :: footer"></div>
 </body>
 </html>

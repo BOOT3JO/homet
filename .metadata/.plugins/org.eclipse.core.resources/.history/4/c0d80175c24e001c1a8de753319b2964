@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>키트 홈</title>
+</head>
+<body>
+
+	<div th:fragment="menu" th:replace="include/header :: menu"></div>
+	
+	<a href="/mealkit/mealkit">밀키트 만들기</a>
+	<a href="/mealkit/mealkitset">추천 세트</a>
+	<a href="/">홈으로</a>
+	
+	<div th:fragment="footer" th:replace="include/footer :: footer"></div>	
+</body>
+</html>

@@ -5,6 +5,7 @@
 <title>운동영상(수정)</title>
 <link rel="stylesheet" href="/resources/css/header.css">
 <link rel="stylesheet" href="/resources/css/video.css">
+<link rel="stylesheet" href="/resources/css/footer.css">
 </head>
 <body>
 	<div th:fragment="menu" th:replace="include/header :: menu"></div>
@@ -33,9 +34,11 @@
 		
 		<div class="updatebtn">
 			<button type="submit">저장</button>
-			<a th:href="@{/videodetail?(vidx=${vidx},page=${page},category=${video.category})}">취소</a>
+			<a th:href="@{/videodetail?(vidx=${vidx},page=${page},category=${video.category})}">돌아가기</a>
 		</div>
 		</form>
 	</div>
+	
+	<div th:fragment="footer" th:replace="include/footer :: footer"></div>
 </body>
 </html>

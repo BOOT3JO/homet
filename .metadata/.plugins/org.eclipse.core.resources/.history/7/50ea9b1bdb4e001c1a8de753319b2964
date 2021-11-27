@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+section{
+	display: flex;
+	justify-content: center;
+	margin: auto;
+}
+ul{
+	list-style: none;
+}
+div{
+color:#00e676;
+padding-bottom:5px;
+font-size: 18px;
+}
+#submit, #home{
+	 background-color: #fff;
+	 border-radius: 50px;
+	 border: 2px solid #5d4037;
+	  height : 30px
+	
+}
+li{
+	 padding:10px;
+	 font-size: 16px;
+}
+input{
+	 border-radius: 5px;
+	 border: 1px solid #5d4037;
+	 height : 20px 
+}

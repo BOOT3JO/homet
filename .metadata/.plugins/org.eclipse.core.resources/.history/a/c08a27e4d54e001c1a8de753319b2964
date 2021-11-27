@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>아이디 찾기</title>
+<link rel="stylesheet" href="resources/css/findid.css">
+</head>
+<body>
+<section>
+<div class="logo">
+		<a href="/"><img alt="mainlogo" src="/resources/img/mainlogo.png" id="mainlogo"></a>
+</div>
+<form method="post" th:action="@{findId}">
+<div>
+<h3>FIND ID</h3>
+<table>
+<tr><th>이름</th>
+		<td> <input type ="text" name="name"> </td> 
+		</tr>
+<tr><th>닉네임</th>
+	<td> <input type="text" name="nickname"> </td> 
+	</tr>
+<tr>
+<td colspan="1" style="text-align: center"></td>
+	<td> <input type="submit" id="submit" value="이메일 찾기"> </td> 
+	</tr>
+
+</table>
+
+</form>
+</div>
+</section>
+
+</body>
+</html>
