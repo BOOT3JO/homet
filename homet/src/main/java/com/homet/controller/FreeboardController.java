@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,10 +22,10 @@ import org.springframework.web.bind.annotation.SessionAttribute;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.homet.model.FPageDto;
 import com.homet.model.Freeboard;
 import com.homet.model.Likes;
 import com.homet.model.User;
+import com.homet.model.FPageDto;
 import com.homet.service.FreeBoardService;
 import com.homet.service.LikesService;
 
@@ -53,16 +55,16 @@ public class FreeboardController {
 		if(page==null || page.trim().length()==0) currentPage = 1;
 		else currentPage = Integer.parseInt(page);
 		
-		FPageDto pageDto;
+		FPageDto FpageDto;
 		
 		String findText = (String) param.get("findText");
 		String field=(String) param.get("field");
 		
 		totalCount=service.searchCount(param);  
-		pageDto=new FPageDto(currentPage, pageSize, totalCount, field, findText);
-		list=service.searchList(pageDto); 
+		FpageDto=new FPageDto(currentPage, pageSize, totalCount, field, findText);
+		list=service.searchList(FpageDto); 
 		Map<String,Object> map = new HashMap<String,Object>();    
-		map.put("page", pageDto);		
+		map.put("page", FpageDto);		
 		map.put("list",list);	
 		model.addAllAttributes(map);	
 	
@@ -187,3 +189,4 @@ public class FreeboardController {
 		 }
 	 
 	}	
+

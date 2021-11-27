@@ -12,6 +12,9 @@ body {
 }
 
 /* list css */
+.video {
+	margin-left: 3%;
+}
 .category {
 	margin-top: 0px;
 	width: 94%;
