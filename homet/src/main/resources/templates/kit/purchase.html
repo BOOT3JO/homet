@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>장바구니</title>
+</head>
+<body>
+	<h2>장바구니 보기(주문내역 확인 먼저 test) 페이지</h2>
+	<!-- ex) detail에서 장바구니 담기 a태그 누르면  -->
+	<ul th:each="order : ${orderList}">
+	<li th:text="${order.nickname}">test nickname</li>
+	<li th:text="${order.order_list}">test list</li>
+	<li th:text="${order.order_date}">test orderdate</li>
+	<li th:text="${order.del_date}">test deldate</li>
+	</ul>
+	
+	<!-- <ul th:each="set : ${meal_list}">
+	<li th:text="${set.name}"></li>
+	<li th:text="${set.price}"></li>
+	</ul> -->
+	
+</body>
+</html>

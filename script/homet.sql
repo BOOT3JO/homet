@@ -63,3 +63,4 @@ create table likes(
    foreign key(nickname) references users(nickname),
    foreign key(fidx) references freeboard(fidx)
 );
+alter table likes add primary key(lidx);

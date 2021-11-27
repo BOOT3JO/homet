@@ -32,10 +32,13 @@
                   $('.id_ok').css("display","block"); 
                   $('.id_ok').css("color","blue"); 
                   $('.id_already').css("display", "none");
+                  $("#sendMail").removeAttr("disabled");
               } else { // cnt가 1일 경우 -> 이미 존재하는 아이디
                   $('.id_already').css("display","block");
                   $('.id_already').css("color","red");
                   $('.id_ok').css("display", "none");
+                  $("#sendMail").attr("disabled", "disabled");
+                  $("#submit").attr("disabled", "disabled"); 
               }
           },
           error:function(){
@@ -65,13 +68,14 @@
 	 $(function(){
 		 $("#password_ck2").hide();
 		$("input").keyup(function(){
-			
+			var check=$("#inputCommoncode").is(":disabled");
 			var name_ck =$("#name").val();
 			var password_ck =$("#password").val();
 			var nickname_ck =$("#nickname").val();
 			var email_ck =$("#id").val();
 			if(name_ck ==""){
 				$("#name_ck").show();
+				$("#submit").attr("disabled", "disabled");
 			}else {
 				$("#name_ck").hide();
 			}
@@ -99,6 +103,12 @@
 			}else {
 				$("#email_ck").show();
 				$(".id_ok").hide();
+				$("#submit").attr("disabled", "disabled"); 
+			}
+			if(check =="true"){
+				$("#submit").attr("disabled", "disabled"); 
+			}
+			if($(".compare").css("display") == "none"){
 				$("#submit").attr("disabled", "disabled"); 
 			}
 		}); 

@@ -13,12 +13,12 @@ layout:decorate="~{layout/default_layout}">
 <h1>This is <span>500</span> Error Page!</h1> 
 
 <img src="../resources/img/error_img.png"/>
-
-500 Server Error... 
-<br> 
-
+<div>
+500 Server Error...
+<br> <br>
  <input type="button" th:value="뒤로가기" th:onclick="history.back()"/>
  <input type="button" th:value="처음으로" th:onclick="location.href='/'"/>
+ </div>
  </section>
 </body> 
 </html>

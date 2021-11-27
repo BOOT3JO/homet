@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>밀키트 만들기</title>
+
+<style type="text/css">
+	#kitbox{
+		border: 1px solid black;
+		width: 500px;
+		height: 300px;
+	}
+	
+	.item:hover{
+		cursor: pointer;
+	}
+	
+	.container{
+		width: 500px;
+		text-align: center;
+	}
+	
+</style>
+</head>
+<body>
+	<h1>밀키트 만들기</h1>
+	
+	<button onclick="meatBtn()">meat</button>
+	<button onclick="saladBtn()">salad</button>
+	<button onclick="toppingBtn()">topping</button>
+	<button onclick="sauceBtn()">sauce</button>
+	<div class="container">
+	<div id="meat">
+		<div th:onclick="add_kit([[${vo.name}]], [[${vo.price}]], [[${vo.midx}]])"  th:each="vo : ${meatList}" class="item">
+			<span th:text="${vo.name}">상품명</span>
+			<span th:text="|${vo.price}원|">가격</span>
+		</div>
+	</div>
+	<div id="salad" style="display: none">
+		<div th:onclick="add_kit([[${vo.name}]], [[${vo.price}]], [[${vo.midx}]])"   th:each="vo : ${saladList}" class="item">
+			<span th:text="${vo.name}">상품명</span>
+			<span th:text="|${vo.price}원|">가격</span>
+		</div>
+	</div>
+	<div id="topping" style="display: none">
+		<div th:onclick="add_kit([[${vo.name}]], [[${vo.price}]], [[${vo.midx}]])"   th:each="vo : ${toppingList}" class="item">
+			<span th:text="${vo.name}">상품명</span>
+			<span th:text="|${vo.price}원|">가격</span>
+		</div>
+	</div>
+	<div id="sauce" style="display: none">
+		<div th:onclick="add_kit([[${vo.name}]], [[${vo.price}]], [[${vo.midx}]])"   th:each="vo : ${sauceList}" class="item">
+			<span th:text="${vo.name}">상품명</span>
+			<span th:text="|${vo.price}원|">가격</span>
+		</div>
+	</div>
+	</div>
+	
+	<div id="kitbox">
+	
+	</div>
+	<div id="price_all">
+	
+	</div>
+		<button onclick="cartBtn()">지금 바로 구매</button>
+		<button onclick="cartChoiceBtn()">장바구니에 담기</button>
+		
+	
+	
+	<script type="text/javascript">
+	// idx 담을 배열 선언
+	let idxList = new Array();	// const 로 선언하면 상수라서 변경이 불가!! let으로 선언할 것!
+	let price_all = 0;
+	document.getElementById("price_all").innerHTML="총 액 : "+price_all + "원";
+	
+	const $kitbox = document.getElementById('kitbox');
+	
+	const add_kit = function(name, price, idx){
+	      /* 자식 노드 추가 */
+	      const $new = "<div>"+ name +"    "+ price +"원"+
+	      '<button onclick="delete_row(this,'+ idx+","+ price+ ')">x</button></div>';
+	      
+	      const $div = document.createElement('div');       // 새로운 요소 생성. - ul 태그
+	      $div.innerHTML = $new;
+	      $kitbox.appendChild($div);
+	      //생성된 요소의 css 스타일을 적용하는 방법.
+	      /* $div.className='item';
+	      $div.classList.add('item01'); */
+	      idxList.push(idx);	// 배열에 해당 idx 담기!!
+	      console.log(idxList);
+	      price_all+= parseInt(price);
+		  document.getElementById("price_all").innerHTML="총 액 : "+ price_all + "원";
+	    }
+	
+	// x 버튼 클릭 함수
+	const delete_row = function(me, idx, price){
+		me.parentNode.remove();
+		const value = idx;
+		idxList = idxList.filter(item => item !== value);	// 배열에서 해당 idx 제거 !!
+		
+		console.log(idxList);
+		price_all-= parseInt(price);
+		  document.getElementById("price_all").innerHTML="총 액 : "+price_all + "원";
+	}
+	
+	// meat 보이기 버튼
+	const meatBtn = function(){
+		document.getElementById("meat").style.display = "block";
+		document.getElementById("salad").style.display = "none";
+		document.getElementById("topping").style.display = "none";
+		document.getElementById("sauce").style.display = "none";
+	} 
+	
+	// salad 보이기 버튼
+	const saladBtn = function(){
+		document.getElementById("meat").style.display = "none";
+		document.getElementById("salad").style.display = "block";
+		document.getElementById("topping").style.display = "none";
+		document.getElementById("sauce").style.display = "none";
+	}
+	
+	// topping 보이기 버튼
+	const toppingBtn = function(){
+		document.getElementById("meat").style.display = "none";
+		document.getElementById("salad").style.display = "none";
+		document.getElementById("topping").style.display = "block";
+		document.getElementById("sauce").style.display = "none";
+	}
+	
+	// sauce 보이기 버튼
+	const sauceBtn = function(){
+		document.getElementById("meat").style.display = "none";
+		document.getElementById("salad").style.display = "none";
+		document.getElementById("topping").style.display = "none";
+		document.getElementById("sauce").style.display = "block";
+	}
+	
+	// 장바구니 이동 함수 (지금 구매하기)
+	const cartBtn = function(){
+		let idx_list = "";
+		for(var idx of idxList){
+			idx_list += "/" + idx;
+		}
+		console.log(idx_list);
+		
+		window.location.href="/mealkit/cart?type=mealkit&idx_list=" + idx_list+"&price="+price_all;
+	}
+	
+	// 장바구니에 담기
+	const cartChoiceBtn = function(){
+		let idx_list = "";
+		for(var idx of idxList){
+			idx_list += "/" + idx;
+		}
+		
+		let y = confirm("kit를 장바구니에 담았습니다.\n장바구니로 이동할까요?");
+		if(y) window.location.href="/mealkit/cart?type=mealkit&idx_list=" + idx_list+"&price="+price_all;
+		else window.location.href="/mealkit/?type=mealkit&idx_list=" + idx_list+"&price="+price_all;
+	}
+	
+	
+	
+	</script>
+</body>
+</html>

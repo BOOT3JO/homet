@@ -3,14 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="../resources/css/detail.css">
+<link rel="stylesheet" href="/resources/css/header.css">
+<link rel="stylesheet" href="/resources/css/detail.css">
+<link rel="stylesheet" href="/resources/css/footer.css">
 </head>
 <body>
 <section>
+<div th:fragment="menu" th:replace="include/header :: menu"></div>
+<div align="center">
 
+<div id="all">
+<h3 style="color: #967B55;">USER INFOMATION</h3>
     <ul>
-  <h3>회원정보</h3>
-      <li >
+      <li>
         <div >이메일</div>
         <input type="text" name="email"   readonly th:value="${user.email }"> 
       </li>
@@ -46,7 +51,9 @@
         
       </li>
     </ul>
-
+    </div>
+</div>
 </section>
+<div th:fragment="footer" th:replace="include/footer :: footer"></div>
 </body>
 </html>
