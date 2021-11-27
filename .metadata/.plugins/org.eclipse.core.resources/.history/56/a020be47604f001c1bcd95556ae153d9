@@ -102,8 +102,8 @@
 	    <div class="detailbtn">     
 	           <th:block th:if="${session.user != null}">  <!-- 글 작성자만 수정삭제 보이도록 -->
 	              <th:block th:if="${session.user.name == 'admin' || session.user.nickname == detail.nickname}">
-	               <a th:href="@{/update?(fidx=${detail.fidx},page=${page})}">수정</a>
-	               <a th:href="@{/boarddelete?(fidx=${detail.fidx},page=${page})}">삭제</a>
+	               <a  th:href="@{/update?(fidx=${detail.fidx},page=${page})}">수정</a>
+	               <a  th:href="@{/boarddelete?(fidx=${detail.fidx},page=${page})}">삭제</a>
 	            </th:block>
 	         </th:block>
 	         <a href="/list">목록</a>

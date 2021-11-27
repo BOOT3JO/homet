@@ -50,7 +50,7 @@
 			
 			<div>
 			<th:block th:if="${session.user != null}">
-				<th:block th:if="${session.user.name == 'admin'}">
+				<th:block th:if="${session.user.name == 'admin' || session.user.nickname == detail.nickname}">
 					<a class="insert" th:href="@{/videoinsert?(page=${page.currentPage})}">글쓰기</a>
 				</th:block>
 			</th:block>
