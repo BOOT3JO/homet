@@ -25,11 +25,12 @@ body {
 	border-bottom: 1px solid black;
 }
 .boardnotice {
-	background-color: #D6FFC2;
+	background-color: #9ACF81;
 	padding-top: 10px;
 	padding-left: 50px;
 	padding-right: 50px;
 	padding-bottom: 50px;
+	border-radius: 10px;
 }
 .boardlist {
 	padding-top: 10px;

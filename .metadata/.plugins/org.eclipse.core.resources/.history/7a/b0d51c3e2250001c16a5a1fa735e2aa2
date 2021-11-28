@@ -25,11 +25,7 @@ body {
 	border-bottom: 1px solid black;
 }
 .boardnotice {
-	background-color: #D6FFC2;
-	padding-top: 10px;
-	padding-left: 50px;
-	padding-right: 50px;
-	padding-bottom: 50px;
+	background-color: #9ACF81;
 }
 .boardlist {
 	padding-top: 10px;
@@ -200,9 +196,6 @@ li {
 	width: 100%;
 	min-height:200px;
 	white-space: pre-wrap;
-	text-align: center;
-	padding-top: 5%;
-	padding-bottom: 5%;
 }
 .fimage{
 	width: 50%;
