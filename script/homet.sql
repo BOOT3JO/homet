@@ -260,49 +260,62 @@ insert into mealkit(name,price,image,category) values('ÇÇ³Ó ¼Ò½º',   '300',   'Ç
 insert into mealkit(name,price,image,category) values('ºí·¢°¥¸¯ ¼Ò½º',   '300',   'ºí·¢°¥¸¯ ¼Ò½º.png',   'sauce');
 -- ---------------------------------------------------
 -- set_menu µ¥ÀÌÅÍ
-nsert into set_menu (name,content,category)   -- balance
+insert into set_menu (name,content,category)
+values('¹úÅ©¾÷ set','¹úÅ©¾÷À» ¿øÇÏ´Â ÀÚ¿¡°Ô ÇÊ¿äÇÑ set!!','set');
+insert into set_menu (name,price,idx_list,category)
+values('¹úÅ©¾÷ set1','7800','1/4/7/18/15/24/25/46','bulk');
+insert into set_menu (name,price,idx_list,category)
+values('¹úÅ©¾÷ set2','7300','2/2/5/22/21/17/31/23/45','bulk');
+insert into set_menu (name,price,idx_list,category)
+values('¹úÅ©¾÷ set3','10400','12/4/6/20/17/15/28/30/19/43/32','bulk');
+insert into set_menu (name,price,idx_list,category)
+values('¹úÅ©¾÷ set4','11300','1/4/13/18/15/20/26/24/41','bulk');
+
+
+-- 11.18
+insert into set_menu (name,content,category)   -- balance
 values('¸öÂ¯ set','¹ë·±½ºÀÖ´Â ½Ä´ÜÀ» Ã¬±â´Â set!!','set');
 insert into set_menu (name,price,idx_list,category)
-values('Æò¼Ò½Ä´Ü set1','6000','3/17/15/30/31/24/32','balance');
+values('Æò¼Ò½Ä´Ü set1','4100','3/17/15/30/31/24/32','balance');
 insert into set_menu (name,price,idx_list,category)
-values('Æò¼Ò½Ä´Ü set2','6500','11/2/18/16/22/23/26/43/35','balance');
+values('Æò¼Ò½Ä´Ü set2','9100','11/2/18/16/22/23/26/43/35','balance');
 insert into set_menu (name,price,idx_list,category)
-values('Æò¼Ò½Ä´Ü set3','7500','13/15/20/21/24/31/34/42','balance');
+values('Æò¼Ò½Ä´Ü set3','8100','13/15/20/21/24/31/34/42','balance');
 insert into set_menu (name,price,idx_list,category)
-values('Æò¼Ò½Ä´Ü set4','7000','5/9/18/19/15/27/28/39/40','balance');
+values('Æò¼Ò½Ä´Ü set4','7900','5/9/18/19/15/27/28/39/40','balance');
 
 
 insert into set_menu (name,content,category)   -- bodyprofile bdpf
 values('Body Profile set','¹ÙµğÇÁ·ÎÇÊ·¯¿¡°Ô ÇÊ¿äÇÑ set!!','set');
 insert into set_menu (name,price,idx_list,category)
-values('¹ÙµğÇÁ·ÎÇÊ¿ë set1','5500','1/15/16/26/31/34/45','bodyprofile');
+values('¹ÙµğÇÁ·ÎÇÊ¿ë set1','4600','1/15/16/26/31/34/45','bodyprofile');
 insert into set_menu (name,price,idx_list,category)
-values('¹ÙµğÇÁ·ÎÇÊ¿ë set2','5500','4/17/18/20/30/29/39/41','bodyprofile');
+values('¹ÙµğÇÁ·ÎÇÊ¿ë set2','4400','4/17/18/20/30/29/39/41','bodyprofile');
 insert into set_menu (name,price,idx_list,category)
-values('¹ÙµğÇÁ·ÎÇÊ¿ë set3','6000','7/22/16/21/24/27/35/40','bodyprofile');
+values('¹ÙµğÇÁ·ÎÇÊ¿ë set3','6100','7/22/16/21/24/27/35/40','bodyprofile');
 insert into set_menu (name,price,idx_list,category)
-values('¹ÙµğÇÁ·ÎÇÊ¿ë set4','4500','10/16/19/21/26/23/37/47','bodyprofile');
+values('¹ÙµğÇÁ·ÎÇÊ¿ë set4','8100','10/16/19/21/26/23/37/47','bodyprofile');
 
-
+select * from set_menu sm ;
 
 insert into set_menu (name,content,category)   -- diet
 values('´ÙÀÌ¾îÆ® set','´ÙÀÌ¾îÆ®°¡ °íÇÂ ÀÚ°¡ ÇÈÇÑ set!!','set');
 insert into set_menu (name,price,idx_list,category)
-values('´ÙÀÌ¾îÆ® ½Ä´Ü set1','4000','1/18/18/30/30/30/44','diet');
+values('´ÙÀÌ¾îÆ® ½Ä´Ü set1','4300','1/18/18/30/30/30/44','diet');
 insert into set_menu (name,price,idx_list,category)
-values('´ÙÀÌ¾îÆ® ½Ä´Ü set2','3500','7/15/20/23/25','diet');
+values('´ÙÀÌ¾îÆ® ½Ä´Ü set2','4500','7/15/20/23/25','diet');
 insert into set_menu (name,price,idx_list,category)
-values('´ÙÀÌ¾îÆ® ½Ä´Ü set3','4500','4/16/18/31/31/31/25/46','diet');
+values('´ÙÀÌ¾îÆ® ½Ä´Ü set3','4800','4/16/18/31/31/31/25/46','diet');
 
 
 insert into set_menu (name,content,category)   -- vegetable vgtb
 values('vegetable set','Ã¤½ÄÀ§ÁÖ¸¦ ¿øÇÏ´Â ÀÚ¿¡°Ô ÇÊ¿äÇÑ set!!','set');
 insert into set_menu (name,price,idx_list,category)
-values('»ø·¯µåÀ§ÁÖ set1','3500','11/15/19/20/26/30/34','salad');
+values('»ø·¯µåÀ§ÁÖ set1','7800','11/15/19/20/26/30/34','salad');
 insert into set_menu (name,price,idx_list,category)
-values('»ø·¯µåÀ§ÁÖ set2','3500','5/15/23/24/26/31/33','salad');
+values('»ø·¯µåÀ§ÁÖ set2','4800','5/15/23/24/26/31/33','salad');
 insert into set_menu (name,price,idx_list,category)
-values('»ø·¯µåÀ§ÁÖ set3','4000','12/15/17/21/23/25/35/47','salad');
+values('»ø·¯µåÀ§ÁÖ set3','6600','12/15/17/21/23/25/35/47','salad');
 -- ---------------------------------------------------
 -- freeboard µ¥ÀÌÅÍ
 INSERT INTO homet.freeboard (subject,nickname,hashtag,content,fimage,reg_date,like_cnt) VALUES
