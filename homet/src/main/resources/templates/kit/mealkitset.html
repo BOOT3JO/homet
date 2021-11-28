@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <title>밀키트 세트</title>
+<link rel="stylesheet" href="/resources/css/header.css">
+<link rel="stylesheet" href="/resources/css/footer.css">
 </head>
 <body>
+	<div th:fragment="menu" th:replace="include/header :: menu"></div>
 	<h1>밀키트 세트</h1>
 	<ul th:each="set,index : ${setList}">
 		<li>
@@ -15,6 +18,6 @@
 			</ul>
 		</li>	
 	</ul>
-	
+	<div th:fragment="footer" th:replace="include/footer :: footer"></div>
 </body>
 </html>

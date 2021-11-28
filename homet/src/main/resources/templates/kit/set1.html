@@ -3,8 +3,18 @@
 <head>
 <meta charset="UTF-8">
 <title>벌크업 set</title>
+<link rel="stylesheet" href="/resources/css/header.css">
+<link rel="stylesheet" href="/resources/css/footer.css">
 </head>
 <body>
+	<div th:fragment="menu" th:replace="include/header :: menu"></div>
+	<div class="set_navbar">
+		<a href="/mealkit/chooseSet?category=1">벌크업 set</a>
+		<a href="/mealkit/chooseSet?category=2">몸짱 set</a>
+		<a href="/mealkit/chooseSet?category=3">바프 set</a>
+		<a href="/mealkit/chooseSet?category=4">다이어트 set</a>
+		<a href="/mealkit/chooseSet?category=5">채식 set</a>
+	</div>
 	<h1>벌크업 set</h1>
 	<ul th:each="set : ${setList}">
 		<li>
@@ -17,5 +27,6 @@
 			</ul>
 		</li>	
 	</ul>
+	<div th:fragment="footer" th:replace="include/footer :: footer"></div>
 </body>
 </html>
