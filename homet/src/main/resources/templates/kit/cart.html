@@ -3,8 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <title>장바구니</title>
+<link rel="stylesheet" href="/resources/css/header.css">
+<link rel="stylesheet" href="/resources/css/footer.css">
 </head>
 <body>
+	<div th:fragment="menu" th:replace="include/header :: menu"></div>
 	<h1>장바구니</h1>
 	<a href="/">홈으로</a>
 	<div th:each="kit, i : ${session.cart}">
@@ -31,6 +34,7 @@
 	</div>
 	<div id="price_all"></div>
 	<button onclick="order()">주문하기</button>
+	<div th:fragment="footer" th:replace="include/footer :: footer"></div>
 </body>
 
 <script type="text/javascript">

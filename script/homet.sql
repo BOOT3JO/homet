@@ -73,6 +73,17 @@ create table likes(
    foreign key(fidx) references freeboard(fidx)
 );
 -- ---------------------------------------------------
+-- set_menu 
+create table set_menu(
+   setidx int auto_increment,
+   name varchar(30) not null,
+   content varchar(50),
+   price varchar(6),
+   idx_list varchar(50),   -- 11.18변경
+   category varchar(20) not null,   -- 11.18 변경
+   primary key(setidx)
+);
+-- ---------------------------------------------------
 -- videos 데이터 (카테고리 : 홈트, 웨이트, 요가, 스트레칭)
 
 -- 홈트
@@ -184,10 +195,6 @@ insert into videos(subject, category, url, content)
 			values("[빅씨스] 스쿼트 10가지 동작", "홈트", "https://www.youtube.com/embed/DWYDL-WxF1U", "[빅씨스] 스쿼트 10가지 동작 영상입니다!");
 insert into videos(subject, category, url, content)
 			values("[X-HIT] 마일리 사일러스 다리운동", "홈트", "https://www.youtube.com/embed/xpzMr3nSOIE", "[X-HIT] 마일리 사일러스 다리운동 영상입니다!");
-insert into videos(subject, category, url, content)
-			values("", "홈트", "", " 영상입니다!");
-insert into videos(subject, category, url, content)
-			values("", "홈트", "", " 영상입니다!");
 		
 -- ---------------------------------------------------
 -- mealkit 데이터
@@ -239,4 +246,49 @@ insert into mealkit(name,price,image,category) values('스리라차 소스',   '300', 
 insert into mealkit(name,price,image,category) values('스위트 칠리 소스',   '300',   '스위트칠리 소스.png',   'sauce');
 insert into mealkit(name,price,image,category) values('피넛 소스',   '300',   '피넛 소스.png',   'sauce');
 insert into mealkit(name,price,image,category) values('블랙갈릭 소스',   '300',   '블랙갈릭 소스.png',   'sauce');
+-- ---------------------------------------------------
+-- set_menu 데이터
+nsert into set_menu (name,content,category)   -- balance
+values('몸짱 set','밸런스있는 식단을 챙기는 set!!','set');
+insert into set_menu (name,price,idx_list,category)
+values('평소식단 set1','6000','3/17/15/30/31/24/32','balance');
+insert into set_menu (name,price,idx_list,category)
+values('평소식단 set2','6500','11/2/18/16/22/23/26/43/35','balance');
+insert into set_menu (name,price,idx_list,category)
+values('평소식단 set3','7500','13/15/20/21/24/31/34/42','balance');
+insert into set_menu (name,price,idx_list,category)
+values('평소식단 set4','7000','5/9/18/19/15/27/28/39/40','balance');
+
+
+insert into set_menu (name,content,category)   -- bodyprofile bdpf
+values('Body Profile set','바디프로필러에게 필요한 set!!','set');
+insert into set_menu (name,price,idx_list,category)
+values('바디프로필용 set1','5500','1/15/16/26/31/34/45','bodyprofile');
+insert into set_menu (name,price,idx_list,category)
+values('바디프로필용 set2','5500','4/17/18/20/30/29/39/41','bodyprofile');
+insert into set_menu (name,price,idx_list,category)
+values('바디프로필용 set3','6000','7/22/16/21/24/27/35/40','bodyprofile');
+insert into set_menu (name,price,idx_list,category)
+values('바디프로필용 set4','4500','10/16/19/21/26/23/37/47','bodyprofile');
+
+
+
+insert into set_menu (name,content,category)   -- diet
+values('다이어트 set','다이어트가 고픈 자가 픽한 set!!','set');
+insert into set_menu (name,price,idx_list,category)
+values('다이어트 식단 set1','4000','1/18/18/30/30/30/44','diet');
+insert into set_menu (name,price,idx_list,category)
+values('다이어트 식단 set2','3500','7/15/20/23/25','diet');
+insert into set_menu (name,price,idx_list,category)
+values('다이어트 식단 set3','4500','4/16/18/31/31/31/25/46','diet');
+
+
+insert into set_menu (name,content,category)   -- vegetable vgtb
+values('vegetable set','채식위주를 원하는 자에게 필요한 set!!','set');
+insert into set_menu (name,price,idx_list,category)
+values('샐러드위주 set1','3500','11/15/19/20/26/30/34','salad');
+insert into set_menu (name,price,idx_list,category)
+values('샐러드위주 set2','3500','5/15/23/24/26/31/33','salad');
+insert into set_menu (name,price,idx_list,category)
+values('샐러드위주 set3','4000','12/15/17/21/23/25/35/47','salad');
 -- ---------------------------------------------------

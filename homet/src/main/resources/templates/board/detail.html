@@ -88,7 +88,7 @@
 	        	
 	        	<li class="like_cnt">좋아요 [[${detail.like_cnt}]]</li>
 	        	      	
-	        	<li><img th:src="@{/img/}+${detail.fimage}" alt="image" class="fimage"></li>
+	        	<li><img th:src="@{/img/}+${detail.fimage}" alt="image" class="fimage" onerror="this.style.display='none'"></li>
 	        	
 	        	<li><pre class="content">[[${detail.content}]]</pre></li>        	
 	        	

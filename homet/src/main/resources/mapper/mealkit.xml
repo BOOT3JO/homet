@@ -24,7 +24,8 @@
  	
  	<insert id="insertOrder" parameterType="Orders">
 	   	insert into orders (nickname,order_list,del_date)
-	   	values(#{nickname},#{order_list},DATE_ADD(now(), interval 1 DAY))
+	   	values(#{nickname},#{order_list},DATE_ADD(now(), interval 2 DAY))
    	</insert>
+ 	
  	
  </mapper>
