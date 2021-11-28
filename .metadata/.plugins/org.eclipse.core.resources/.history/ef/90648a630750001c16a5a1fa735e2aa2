@@ -6,10 +6,6 @@ body {
 	overflow-y: auto;
 }
 
-/* mealkitHome css */
-
-
-/* mealkit css */
 .meal_container{
 	width: 100%;
 	display: flex;

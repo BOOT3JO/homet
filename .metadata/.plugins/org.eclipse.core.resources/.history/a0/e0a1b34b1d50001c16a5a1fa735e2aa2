@@ -29,8 +29,6 @@ import com.homet.model.FPageDto;
 import com.homet.service.FreeBoardService;
 import com.homet.service.LikesService;
 
-import ch.qos.logback.core.recovery.ResilientSyslogOutputStream;
-
 @Controller
 @SessionAttributes(names = {"user"})
 //@RequestMapping("/board")
@@ -48,12 +46,8 @@ public class FreeboardController {
 	}
 	
 	@RequestMapping(value="/list")    
-	public String pageList(@RequestParam Map<String, Object> param,Model model,Model model2) {
+	public String pageList(@RequestParam Map<String, Object> param,Model model) {
 		
-		List<Freeboard> list2;
-		list2=service.notice();
-		model2.addAttribute("list2",list2);
-		/* System.out.println(model2); */
 		int currentPage;//현재 페이지
 		List<Freeboard> list;
 		int totalCount; int pageSize=10;

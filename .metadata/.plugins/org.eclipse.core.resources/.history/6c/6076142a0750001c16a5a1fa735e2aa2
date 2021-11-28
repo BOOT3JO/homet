@@ -41,8 +41,8 @@ public class UserController {
 	}
 	
 	@RequestMapping(value="/join",params="start=1")
-	public String join() {
-			return "/user/join";
+	public void join() {
+			
 			
 	}
 	
@@ -79,10 +79,13 @@ public class UserController {
     	return "/user/detail";
    	}
     @RequestMapping(value="/delete")
-   	public String delete(@SessionAttribute("user") User user,SessionStatus status){
+   	public String delete(@SessionAttribute("user") User user,SessionStatus status,Model model){
     	service.delete(user.getUidx());
     	status.setComplete();
-    	return "redirect:/";
+    	 String message="지금까지 이용해 주셔서 감사합니다.";
+			model.addAttribute("message",message );  
+			model.addAttribute("url","../login");
+			return "alertLogin";
    	}
     @RequestMapping(value="/mypage")
    	public void mypage(@SessionAttribute("user") User user){

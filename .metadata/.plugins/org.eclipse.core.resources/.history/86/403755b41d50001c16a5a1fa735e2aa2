@@ -23,7 +23,7 @@
 				<th width="20%">작성일</th>
 			</tr>
 			<th:block th:each="vo : ${list2}">
-				<tr class="boardnotice">
+				<tr class="boardlist">
 					<td><b>[[${vo.fidx }]]</b></td>
 					<td class="detaillink">
 					<a th:href="@{detail(fidx=${vo.fidx},page=${page.currentPage})}">[[${vo.subject }]]</a>

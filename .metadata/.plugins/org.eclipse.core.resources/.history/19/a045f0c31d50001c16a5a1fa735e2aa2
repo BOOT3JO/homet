@@ -24,9 +24,6 @@ body {
 .listname>th {
 	border-bottom: 1px solid black;
 }
-.boardnotice {
-	background-color: #9ACF81;
-}
 .boardlist {
 	padding-top: 10px;
 	padding-left: 50px;
