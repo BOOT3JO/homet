@@ -16,7 +16,7 @@ public class MvcConfiguration implements WebMvcConfigurer {
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
-		List<String> patterns= Arrays.asList("/detail","/write","/user/mypage","/health/*","/kit/*");
+		List<String> patterns= Arrays.asList("/detail","/write","/user/mypage","/health/*","/mealkit/*");
 		registry.addInterceptor(new LoginInterceptor()).addPathPatterns(patterns);
 	}
 }
