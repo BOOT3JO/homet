@@ -30,8 +30,6 @@ public class LoginController {
 
 	private final UserService service;
 	
-
-	
 	public LoginController(UserService service) {
 		this.service=service;
 	}

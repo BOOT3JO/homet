@@ -2,7 +2,7 @@
 <html lang="ko" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>밀키트 만들기</title>
+<title>아보카도</title>
 <link rel="stylesheet" href="/resources/css/header.css">
 <link rel="stylesheet" href="/resources/css/footer.css">
 <link rel="stylesheet" href="/resources/css/mealkit.css">
@@ -12,10 +12,10 @@
 	<div class="meal_container">
 	<h1>밀키트 만들기</h1>
 	<div class="meal_category">
-		<button onclick="meatBtn()">meat</button>
-		<button onclick="saladBtn()">salad</button>
-		<button onclick="toppingBtn()">topping</button>
-		<button onclick="sauceBtn()">sauce</button>
+		<button onclick="meatBtn()" id="meat_cate">meat</button>>
+		<button onclick="saladBtn()" id="salad_cate">salad</button>>
+		<button onclick="toppingBtn()" id="topping_cate">topping</button>>
+		<button onclick="sauceBtn()" id="sauce_cate">sauce</button>
 	</div>
 	<div class="container">
 	<div id="meat" class="container_category">
@@ -102,6 +102,10 @@
 		document.getElementById("salad").style.display = "none";
 		document.getElementById("topping").style.display = "none";
 		document.getElementById("sauce").style.display = "none";
+		document.getElementById("meat_cate").style.border = "3px solid var(--brown-color)";
+		document.getElementById("salad_cate").style.border = "3px solid var(--green-color)";
+		document.getElementById("topping_cate").style.border = "3px solid var(--green-color)";
+		document.getElementById("sauce_cate").style.border = "3px solid var(--green-color)";
 	} 
 	
 	// salad 보이기 버튼
@@ -110,6 +114,10 @@
 		document.getElementById("salad").style.display = "flex";
 		document.getElementById("topping").style.display = "none";
 		document.getElementById("sauce").style.display = "none";
+		document.getElementById("meat_cate").style.border = "3px solid var(--green-color)";
+		document.getElementById("salad_cate").style.border = "3px solid var(--brown-color)";
+		document.getElementById("topping_cate").style.border = "3px solid var(--green-color)";
+		document.getElementById("sauce_cate").style.border = "3px solid var(--green-color)";
 	}
 	
 	// topping 보이기 버튼
@@ -118,6 +126,10 @@
 		document.getElementById("salad").style.display = "none";
 		document.getElementById("topping").style.display = "flex";
 		document.getElementById("sauce").style.display = "none";
+		document.getElementById("meat_cate").style.border = "3px solid var(--green-color)";
+		document.getElementById("salad_cate").style.border = "3px solid var(--green-color)";
+		document.getElementById("topping_cate").style.border = "3px solid var(--brown-color)";
+		document.getElementById("sauce_cate").style.border = "3px solid var(--green-color)";
 	}
 	
 	// sauce 보이기 버튼
@@ -126,6 +138,10 @@
 		document.getElementById("salad").style.display = "none";
 		document.getElementById("topping").style.display = "none";
 		document.getElementById("sauce").style.display = "flex";
+		document.getElementById("meat_cate").style.border = "3px solid var(--green-color)";
+		document.getElementById("salad_cate").style.border = "3px solid var(--green-color)";
+		document.getElementById("topping_cate").style.border = "3px solid var(--green-color)";
+		document.getElementById("sauce_cate").style.border = "3px solid var(--brown-color)";
 	}
 	
 	// 장바구니 이동 함수 (지금 구매하기)
