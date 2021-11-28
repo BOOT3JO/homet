@@ -90,7 +90,7 @@ create table set_menu(
 -- users 데이터
 INSERT INTO homet.users (name,nickname,email,password,age,gender,kakao,addr) VALUES
 	 ('선명진','사용자','aud0403@naver.com',sha2('1111111',256),30,'여',NULL,'서울 중랑구 동일로129길 35'),
-	 ('양혜영','양형','ausouon@gmail.com',sha2('1111111',256),21,'여',NULL,'서울 도봉구 도봉로181길 8'),
+	 ('양혜영','양형','ansouon@gmail.com',sha2('1111111',256),21,'여',NULL,'서울 도봉구 도봉로181길 8'),
 	 ('김나영','김나영','psi5059@naver.com',sha2('1111111',256),30,'여',NULL,'경기 부천시 역곡로472번길 12'),
 	 ('강규석','규석강','ka@naver.com',sha2('1111111',256),29,'남',NULL,'서울 강남구 강남대로 298'),
 	 ('이현수','쑤우','dlqustn96@gmail.com',sha2('1111111',256),26,'여',NULL,'서울 관악구 낙성대로 2'),
