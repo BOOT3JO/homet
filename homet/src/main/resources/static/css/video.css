@@ -132,9 +132,15 @@ body {
 .detailtable {
 	margin-left: 7%;
 }
-.detailcontent {
-	padding: 20px;
-	text-align: center;
+.detailiframe {
+   padding: 20px;
+   text-align: center;
+}
+.videocontent {
+   padding: 20px;
+   text-align: center;
+   width: 100%;
+   white-space: pre-wrap;
 }
 .detailbtn {
 	margin-top: 10px;
@@ -174,6 +180,8 @@ input[type="text"] {
 	border-radius: 5px; 
 }
 textarea {
+	 width: 80%;
+   height: 50%;
 	border: 1px solid #9ACF81;
 	border-radius: 5px; 
 }

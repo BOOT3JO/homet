@@ -11,6 +11,7 @@ public class WebConfig implements WebMvcConfigurer {
 
 	private String resourcePath = "file:///C:/freeboard/img/";  //실제 경로
 	
+	
 	private String uploadPath="/img/**";   //가져올 때 작성할 경로
 	
 	@Override

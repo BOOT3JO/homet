@@ -74,6 +74,11 @@ public class FreeBoardServiceImpl implements FreeBoardService {
 		// TODO Auto-generated method stub
 		return dao.like_cnt(fidx);
 	}
+
+	@Override
+	public List<Freeboard> notice() {
+		return dao.notice();
+	}
 	
 	
 	

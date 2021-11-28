@@ -57,10 +57,11 @@ create table freeboard(
 );
 -- likes
 create table likes(
-   lidx int,
+   lidx int auto_increment,
    nickname varchar(30),
    fidx int,
    foreign key(nickname) references users(nickname),
    foreign key(fidx) references freeboard(fidx)
 );
 alter table likes add primary key(lidx);
+drop table likes ;

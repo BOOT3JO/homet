@@ -74,5 +74,9 @@
 		update freeboard set like_cnt=(select count(*) from 
 		likes where fidx=#{fidx}) where fidx=#{fidx};
 	</update>
+	
+	<select id="notice" resultType="Freeboard">
+		select * from freeboard where nickname="관리자" and subject like concat('%',"[공지]",'%')
+	</select>
 
 </mapper>

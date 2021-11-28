@@ -4,7 +4,8 @@
 	<meta charset="UTF-8">
 	<title>자유게시판 내용 상세보기</title>
 	<link rel="stylesheet" href="/resources/css/header.css">
-	<link rel="stylesheet" href="/resources/css/boardDetail.css">
+	<link rel="stylesheet" href="/resources/css/board.css">
+	<link rel="stylesheet" href="/resources/css/footer.css">
 	
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 	<script type="text/javascript">
@@ -87,7 +88,7 @@
 	        	
 	        	<li class="like_cnt">좋아요 [[${detail.like_cnt}]]</li>
 	        	      	
-	        	<li><img th:src="@{/img/}+${detail.fimage}" alt="image" class="fimage"></li>
+	        	<li><img th:src="@{/img/}+${detail.fimage}" alt="image" class="fimage" onerror="this.style.display='none'"></li>
 	        	
 	        	<li><pre class="content">[[${detail.content}]]</pre></li>        	
 	        	
@@ -111,6 +112,6 @@
 		
       
 	</div>
-    
+   <div th:fragment="footer" th:replace="include/footer :: footer"></div> 
 </body>
 </html>
