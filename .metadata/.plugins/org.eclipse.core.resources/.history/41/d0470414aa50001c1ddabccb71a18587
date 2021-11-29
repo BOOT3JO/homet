@@ -3,9 +3,8 @@
 #all {
 	margin: auto;
     width: 100%;
-    max-width: 50%;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    max-width: 30%;
+    padding: 5%;
     background: #fff;
     border-radius: 30px;
     box-sizing: border-box;
@@ -25,7 +24,7 @@ section{
 	padding-left: 0px;
 	margin: 0px;
 	width: 100%;
-    max-width: 100%;
+    max-width: 30%;
 }
 .mypagemenu>li{	
 	height: 40px;

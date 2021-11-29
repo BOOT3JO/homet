@@ -4,8 +4,6 @@
 	margin: auto;
     width: 100%;
     max-width: 50%;
-    padding-top: 5%;
-    padding-bottom: 5%;
     background: #fff;
     border-radius: 30px;
     box-sizing: border-box;
