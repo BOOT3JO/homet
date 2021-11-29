@@ -5,24 +5,28 @@
 <title>아보카도</title>
 <link rel="stylesheet" href="/resources/css/header.css">
 <link rel="stylesheet" href="/resources/css/footer.css">
+<link rel="stylesheet" href="/resources/css/set_detail.css">
 </head>
 <body>
-
 	<div th:fragment="menu" th:replace="include/header :: menu"></div>
-	<h2>welcome to set1detail(bulk식단 1,2,3,4)</h2>
-	<div>
-		<div>[[${name}]]</div>
-		<div>[[${price}]]</div>
+	<div id="all">
+		<div class="set_container">
+			<div class="set_name">[[${name}]]</div>
+			<div class="set_price">가격 : [[${price}]]원</div>
+		</div>
+		<div class="meal_text"><상품 구성></div>
+		<section class="meal_container">
+		<div th:each="set : ${meal_list}">
+				<img th:src="@{/resources/kit/}+${set.image}">
+				<span th:text="${set.name}" class="item">이름</span>
+				<span th:text="${set.price+'원'}" class="item">가격</span>
+		</div>
+		</section>
+		<div class="btn_box">
+			<button th:onclick="buyNowBtn([[${idx_list}]], [[${price}]], [[${name}]])">지금 구매하기</button>
+			<button th:onclick="cartBtn([[${idx_list}]], [[${price}]], [[${name}]])">장바구니에 추가</button>
+		</div>
 	</div>
-	<ul th:each="set : ${meal_list}">	
-			<li th:text="${set.name}">이름</li>
-			<li th:text="${set.price+'원'}">가격</li>
-	</ul>
-	<div>
-		<button th:onclick="buyNowBtn([[${idx_list}]], [[${price}]], [[${name}]])">지금 구매하기</button>
-		<button th:onclick="cartBtn([[${idx_list}]], [[${price}]], [[${name}]])">장바구니에 추가</button>
-	</div>
-	
 	<div th:fragment="footer" th:replace="include/footer :: footer"></div>
 <script type="text/javascript">
 
