@@ -60,8 +60,15 @@ create table likes(
    lidx int auto_increment,
    nickname varchar(30),
    fidx int,
+   primary key(lidx),
    foreign key(nickname) references users(nickname),
    foreign key(fidx) references freeboard(fidx)
 );
 alter table likes add primary key(lidx);
 drop table likes ;
+drop table freeboard;
+
+INSERT INTO homet.users (name,nickname,email,password,age,gender,kakao,addr) VALUES
+	 ('강규석','규석강','ka@naver.com','1718c24b10aeb8099e3fc44960ab6949ab76a267352459f203ea1036bec382c2',29,'남',NULL,'서울 강남구 강남대로 298'),
+	 ('이현수','쑤우','dlqustn96@gmail.com','bcb15f821479b4d5772bd0ca866c00ad5f926e3580720659cc80d39c9d09802a',26,'여',NULL,'서울 관악구 낙성대로 2'),
+	 ('이지환','환이','t@naver.com','bcb15f821479b4d5772bd0ca866c00ad5f926e3580720659cc80d39c9d09802a',26,'여',NULL,'경기 부천시 범안로 252');

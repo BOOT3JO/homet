@@ -24,6 +24,13 @@ body {
 .listname>th {
 	border-bottom: 1px solid black;
 }
+.boardnotice {
+	background-color: #D6FFC2;
+	padding-top: 10px;
+	padding-left: 50px;
+	padding-right: 50px;
+	padding-bottom: 50px;
+}
 .boardlist {
 	padding-top: 10px;
 	padding-left: 50px;
@@ -101,9 +108,9 @@ input[type="text"] {
 }
 textarea {
 	width: 80%;
-    height: 50%;
+	height: 50%;
 	border: 1px solid #9ACF81;
-	border-radius: 5px; 
+	border-radius: 5px;
 }
 .writebtn {
 	margin-top: 10px;
@@ -192,7 +199,10 @@ li {
 	margin: auto;
 	width: 100%;
 	min-height:200px;
-	white-space: pre-wrap; 
+	white-space: pre-wrap;
+	text-align: center;
+	padding-top: 5%;
+	padding-bottom: 5%;
 }
 .fimage{
 	width: 50%;

@@ -11,7 +11,7 @@ import com.homet.model.User;
 public class UserServiceImpl implements UserService {
 
 	@Autowired
-	private SqlSessionTemplate userSqlSessin;
+	private SqlSessionTemplate userSqlSession;
 	
 	 private UserMapper dao;
 	 

@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="UTF-8">
-<title>운동영상(상세)</title>
+<title>아보카도</title>
 <link rel="stylesheet" href="/resources/css/header.css">
 <link rel="stylesheet" href="/resources/css/video.css">
 <link rel="stylesheet" href="/resources/css/footer.css">
@@ -23,11 +23,9 @@
 				</tr>
 			</table>
 			
-			<div class="detailiframe">
+			<div class="detailcontent">
 				<iframe width="1000" height="600" th:src="${video.url}" title="YouTube video player" frameborder="0" 
-					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			</div>
-			<div class="videocontent">	
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>	
 				<pre>[[${video.content}]]</pre>
 			</div>
 			

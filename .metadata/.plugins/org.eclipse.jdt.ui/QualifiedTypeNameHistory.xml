@@ -19,7 +19,6 @@
     <fullyQualifiedTypeName name="org.apache.catalina.User"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.support.SessionStatus"/>
     <fullyQualifiedTypeName name="com.homet.service.UserService"/>
-    <fullyQualifiedTypeName name="com.homet.model.User"/>
     <fullyQualifiedTypeName name="org.springframework.web.servlet.ModelAndView"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
     <fullyQualifiedTypeName name="com.mysql.cj.xdevapi.JsonParser"/>
@@ -44,4 +43,7 @@
     <fullyQualifiedTypeName name="org.springframework.stereotype.Controller"/>
     <fullyQualifiedTypeName name="java.util.Date"/>
     <fullyQualifiedTypeName name="org.springframework.boot.web.servlet.error.ErrorController"/>
+    <fullyQualifiedTypeName name="com.homet.model.User"/>
+    <fullyQualifiedTypeName name="com.homet.interceptor.LoginInterceptor"/>
+    <fullyQualifiedTypeName name="ch.qos.logback.core.recovery.ResilientSyslogOutputStream"/>
 </qualifiedTypeNameHistroy>

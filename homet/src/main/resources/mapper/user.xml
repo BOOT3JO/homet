@@ -3,7 +3,7 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.homet.dao.UserMapper">
-	
+
 	<select id="login" parameterType="User" resultType="User">
 		select  uidx,name,nickname,email,age,gender,addr from users where email=#{email} and password=sha2(#{password},256)
 	</select>

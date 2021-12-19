@@ -53,5 +53,3 @@ public class ExceptionHandlingController implements ErrorController {
 		
 	 
 }
-
-

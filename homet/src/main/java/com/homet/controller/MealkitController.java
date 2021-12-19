@@ -22,8 +22,6 @@ import com.homet.model.SetMenu;
 import com.homet.model.User;
 import com.homet.service.MealkitService;
 
-import lombok.Builder;
-
 @Controller
 @RequestMapping("/mealkit")
 public class MealkitController {
@@ -144,16 +142,7 @@ public class MealkitController {
 		return "kit/mealkitset";
 	}
 	
-	//1번 추천 세트로 이동
-	@RequestMapping(value = "/chooseSet", params = "category=1")
-	public String setList1(Model model) {
-		
-		List<SetMenu> setList = new ArrayList<SetMenu>();
-		setList = service.getSetByCategory("bulk");
-		model.addAttribute("setList",setList);
-		
-		return "kit/set1";
-	}
+	
 	
 	//주문하기
 	@RequestMapping(value="/order")
@@ -222,24 +211,26 @@ public class MealkitController {
 	      return "kit/setdetail";
 	   }
 	
-	@RequestMapping(value = "/chooseSet", params = "category=2")
-	public String setList2() {
-		return "kit/set2.html";
-	}
+	//1~5번 추천 세트로 이동
+		@RequestMapping(value = "/chooseSet", params = "category")
+		public String setList1(Model model, String category) {
+			
+			List<SetMenu> setList = new ArrayList<SetMenu>();
+			
+			if(category.equals("1")) {
+				setList = service.getSetByCategory("bulk");
+			}else if(category.equals("2")) {
+				setList = service.getSetByCategory("balance");
+			}else if(category.equals("3")) {
+				setList = service.getSetByCategory("bodyprofile");
+			}else if(category.equals("4")) {
+				setList = service.getSetByCategory("diet");
+			}else if(category.equals("5")) {
+				setList = service.getSetByCategory("salad");
+			}
+			model.addAttribute("setList",setList);
+			return "kit/set"+category;
+		}
 	
-	@RequestMapping(value = "/chooseSet", params = "category=3")
-	public String setList3() {
-		return "kit/set3.html";
-	}
-	
-	@RequestMapping(value = "/chooseSet", params = "category=4")
-	public String setList4() {
-		return "kit/set4.html";
-	}
-	
-	@RequestMapping(value = "/chooseSet", params = "category=5")
-	public String setList5() {
-		return "kit/set5.html";
-	}
 	
 }

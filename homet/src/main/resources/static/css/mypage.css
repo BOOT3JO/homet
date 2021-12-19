@@ -3,8 +3,9 @@
 #all {
 	margin: auto;
     width: 100%;
-    max-width: 30%;
-    padding: 5%;
+    max-width: 50%;
+    padding-top: 5%;
+    padding-bottom: 5%;
     background: #fff;
     border-radius: 30px;
     box-sizing: border-box;
@@ -20,8 +21,11 @@ section{
 	margin: auto;
 }
 .mypagemenu{
-	 list-style: none;
-	 padding-left: 0px;
+	list-style: none;
+	padding-left: 0px;
+	margin: 0px;
+	width: 100%;
+    max-width: 100%;
 }
 .mypagemenu>li{	
 	height: 40px;
@@ -48,5 +52,16 @@ section{
 	color: black;
 }
 .menu>a:hover {
+	color: white;
+}
+
+.menu2>a{
+	text-decoration-line: none;
+	color: black;
+	font-size: 24px;
+	padding: 24px 12px;
+}
+
+.menu2>a:hover {
 	color: white;
 }

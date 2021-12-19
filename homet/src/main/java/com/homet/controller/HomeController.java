@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
  * Handles requests for the application home page.
  */
 @Controller
-@SessionAttributes("user")
+@SessionAttributes("user")   // ㅅㅂ 이거다!!!!!!!!!
 public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
